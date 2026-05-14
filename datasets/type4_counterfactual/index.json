@@ -1,0 +1,678 @@
+{
+  "n_problems": 96,
+  "format": "JSONL (one JSON object per line)",
+  "problems": [
+    {
+      "problem_id": 1,
+      "n_vars": 3,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 2,
+      "n_vars": 4,
+      "intervention_var": "X1",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 7,
+      "n_vars": 3,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 9,
+      "n_vars": 3,
+      "intervention_var": "X1",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 11,
+      "n_vars": 4,
+      "intervention_var": "X1",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 13,
+      "n_vars": 3,
+      "intervention_var": "X1",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 14,
+      "n_vars": 4,
+      "intervention_var": "X2",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 16,
+      "n_vars": 4,
+      "intervention_var": "X1",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 20,
+      "n_vars": 5,
+      "intervention_var": "X0",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 21,
+      "n_vars": 5,
+      "intervention_var": "X0",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 22,
+      "n_vars": 3,
+      "intervention_var": "X1",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 23,
+      "n_vars": 5,
+      "intervention_var": "X1",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 25,
+      "n_vars": 3,
+      "intervention_var": "X0",
+      "target": "X1",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 26,
+      "n_vars": 5,
+      "intervention_var": "X3",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 27,
+      "n_vars": 4,
+      "intervention_var": "X1",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 30,
+      "n_vars": 5,
+      "intervention_var": "X0",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 36,
+      "n_vars": 5,
+      "intervention_var": "X2",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 37,
+      "n_vars": 4,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 38,
+      "n_vars": 4,
+      "intervention_var": "X2",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 43,
+      "n_vars": 5,
+      "intervention_var": "X2",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 44,
+      "n_vars": 3,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 46,
+      "n_vars": 3,
+      "intervention_var": "X0",
+      "target": "X1",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 52,
+      "n_vars": 4,
+      "intervention_var": "X2",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 55,
+      "n_vars": 5,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 56,
+      "n_vars": 5,
+      "intervention_var": "X2",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 59,
+      "n_vars": 5,
+      "intervention_var": "X1",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 63,
+      "n_vars": 5,
+      "intervention_var": "X0",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 64,
+      "n_vars": 4,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 66,
+      "n_vars": 4,
+      "intervention_var": "X0",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 68,
+      "n_vars": 5,
+      "intervention_var": "X2",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 69,
+      "n_vars": 5,
+      "intervention_var": "X3",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 71,
+      "n_vars": 4,
+      "intervention_var": "X0",
+      "target": "X1",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 73,
+      "n_vars": 4,
+      "intervention_var": "X1",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 74,
+      "n_vars": 5,
+      "intervention_var": "X2",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 75,
+      "n_vars": 4,
+      "intervention_var": "X2",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 76,
+      "n_vars": 3,
+      "intervention_var": "X1",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 79,
+      "n_vars": 3,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 80,
+      "n_vars": 5,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 81,
+      "n_vars": 5,
+      "intervention_var": "X1",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 83,
+      "n_vars": 5,
+      "intervention_var": "X2",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 84,
+      "n_vars": 4,
+      "intervention_var": "X1",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 85,
+      "n_vars": 5,
+      "intervention_var": "X2",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 86,
+      "n_vars": 5,
+      "intervention_var": "X1",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 91,
+      "n_vars": 4,
+      "intervention_var": "X2",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 93,
+      "n_vars": 4,
+      "intervention_var": "X2",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 95,
+      "n_vars": 3,
+      "intervention_var": "X1",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 97,
+      "n_vars": 4,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 100,
+      "n_vars": 5,
+      "intervention_var": "X2",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 103,
+      "n_vars": 5,
+      "intervention_var": "X1",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 107,
+      "n_vars": 5,
+      "intervention_var": "X0",
+      "target": "X1",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 108,
+      "n_vars": 3,
+      "intervention_var": "X0",
+      "target": "X1",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 109,
+      "n_vars": 5,
+      "intervention_var": "X2",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 110,
+      "n_vars": 5,
+      "intervention_var": "X2",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 112,
+      "n_vars": 5,
+      "intervention_var": "X0",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 120,
+      "n_vars": 4,
+      "intervention_var": "X1",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 122,
+      "n_vars": 4,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 124,
+      "n_vars": 5,
+      "intervention_var": "X2",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 125,
+      "n_vars": 4,
+      "intervention_var": "X1",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 126,
+      "n_vars": 3,
+      "intervention_var": "X0",
+      "target": "X1",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 127,
+      "n_vars": 4,
+      "intervention_var": "X1",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 128,
+      "n_vars": 5,
+      "intervention_var": "X2",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 129,
+      "n_vars": 4,
+      "intervention_var": "X1",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 134,
+      "n_vars": 4,
+      "intervention_var": "X2",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 135,
+      "n_vars": 5,
+      "intervention_var": "X1",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 136,
+      "n_vars": 3,
+      "intervention_var": "X1",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 137,
+      "n_vars": 5,
+      "intervention_var": "X0",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 140,
+      "n_vars": 5,
+      "intervention_var": "X2",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 143,
+      "n_vars": 5,
+      "intervention_var": "X3",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 146,
+      "n_vars": 4,
+      "intervention_var": "X0",
+      "target": "X1",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 147,
+      "n_vars": 5,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 148,
+      "n_vars": 3,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 149,
+      "n_vars": 4,
+      "intervention_var": "X0",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 151,
+      "n_vars": 5,
+      "intervention_var": "X0",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 152,
+      "n_vars": 5,
+      "intervention_var": "X2",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 153,
+      "n_vars": 5,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 154,
+      "n_vars": 4,
+      "intervention_var": "X2",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 158,
+      "n_vars": 4,
+      "intervention_var": "X1",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 161,
+      "n_vars": 3,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 163,
+      "n_vars": 5,
+      "intervention_var": "X1",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 164,
+      "n_vars": 4,
+      "intervention_var": "X2",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 167,
+      "n_vars": 5,
+      "intervention_var": "X3",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 170,
+      "n_vars": 3,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 173,
+      "n_vars": 3,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 176,
+      "n_vars": 5,
+      "intervention_var": "X1",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 177,
+      "n_vars": 5,
+      "intervention_var": "X1",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 180,
+      "n_vars": 5,
+      "intervention_var": "X0",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 181,
+      "n_vars": 4,
+      "intervention_var": "X2",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 183,
+      "n_vars": 4,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 185,
+      "n_vars": 5,
+      "intervention_var": "X3",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 186,
+      "n_vars": 5,
+      "intervention_var": "X1",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 187,
+      "n_vars": 4,
+      "intervention_var": "X0",
+      "target": "X3",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 188,
+      "n_vars": 5,
+      "intervention_var": "X2",
+      "target": "X4",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 192,
+      "n_vars": 3,
+      "intervention_var": "X1",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 194,
+      "n_vars": 3,
+      "intervention_var": "X0",
+      "target": "X2",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 197,
+      "n_vars": 3,
+      "intervention_var": "X0",
+      "target": "X1",
+      "counterfactual_val": 0.0
+    },
+    {
+      "problem_id": 199,
+      "n_vars": 3,
+      "intervention_var": "X0",
+      "target": "X1",
+      "counterfactual_val": 0.0
+    }
+  ]
+}

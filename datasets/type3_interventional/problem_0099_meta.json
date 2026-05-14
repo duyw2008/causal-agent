@@ -1,0 +1,27 @@
+{
+  "problem_id": 99,
+  "var_names": [
+    "X0",
+    "X1",
+    "X2",
+    "X3"
+  ],
+  "edges": [
+    [
+      "X0",
+      "X3"
+    ],
+    [
+      "X1",
+      "X2"
+    ]
+  ],
+  "treatment": "X0",
+  "outcome": "X3",
+  "true_ate": 1.3194511183745627,
+  "obs_EY_given_T_low": -0.5358053690163809,
+  "obs_EY_given_T_high": 0.5481427660878769,
+  "intv_EY_do_T_low": -1.3366678498796511,
+  "intv_EY_do_T_high": 1.3447548183588085,
+  "intv_ate": 2.6814226682384597
+}

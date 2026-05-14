@@ -1,0 +1,35 @@
+{
+  "domain": "medical",
+  "var_names": [
+    "Age",
+    "Treatment",
+    "Recovery"
+  ],
+  "var_names_cn": [
+    "年龄",
+    "治疗",
+    "康复"
+  ],
+  "edges": [
+    [
+      "Age",
+      "Treatment"
+    ],
+    [
+      "Age",
+      "Recovery"
+    ],
+    [
+      "Treatment",
+      "Recovery"
+    ]
+  ],
+  "true_ate": 0.6,
+  "obs_diff": 1.3036569266728169,
+  "confounding_bias": 0.7036569266728169,
+  "backdoor_set": [
+    "Age"
+  ],
+  "n_samples": 1000,
+  "csv_file": "medical.csv"
+}

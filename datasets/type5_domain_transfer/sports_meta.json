@@ -1,0 +1,35 @@
+{
+  "domain": "sports",
+  "var_names": [
+    "Talent",
+    "Training",
+    "Performance"
+  ],
+  "var_names_cn": [
+    "天赋",
+    "训练量",
+    "表现"
+  ],
+  "edges": [
+    [
+      "Talent",
+      "Training"
+    ],
+    [
+      "Talent",
+      "Performance"
+    ],
+    [
+      "Training",
+      "Performance"
+    ]
+  ],
+  "true_ate": 0.6,
+  "obs_diff": 1.299560435066879,
+  "confounding_bias": 0.699560435066879,
+  "backdoor_set": [
+    "Talent"
+  ],
+  "n_samples": 1000,
+  "csv_file": "sports.csv"
+}

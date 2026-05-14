@@ -1,0 +1,35 @@
+{
+  "domain": "climate",
+  "var_names": [
+    "CO2",
+    "Temperature",
+    "SeaIce"
+  ],
+  "var_names_cn": [
+    "二氧化碳",
+    "温度",
+    "海冰面积"
+  ],
+  "edges": [
+    [
+      "CO2",
+      "Temperature"
+    ],
+    [
+      "CO2",
+      "SeaIce"
+    ],
+    [
+      "Temperature",
+      "SeaIce"
+    ]
+  ],
+  "true_ate": 0.6,
+  "obs_diff": 1.3255365179863898,
+  "confounding_bias": 0.7255365179863899,
+  "backdoor_set": [
+    "CO2"
+  ],
+  "n_samples": 1000,
+  "csv_file": "climate.csv"
+}

@@ -1,0 +1,1005 @@
+{
+  "n_problems": 150,
+  "problems": [
+    {
+      "problem_id": 1,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 2.1939233506605977,
+      "obs_diff": 1.711458416064914,
+      "intv_ate": 3.522012066424968
+    },
+    {
+      "problem_id": 2,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 4.338201409238131,
+      "obs_diff": 3.4576068093610237,
+      "intv_ate": 3.128505891040794
+    },
+    {
+      "problem_id": 4,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 1.1070830993770666,
+      "obs_diff": 2.680495869760816,
+      "intv_ate": 3.778870432632867
+    },
+    {
+      "problem_id": 5,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": 2.754506260913553,
+      "obs_diff": 2.296398558826126,
+      "intv_ate": 1.9131548675840795
+    },
+    {
+      "problem_id": 7,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": 0.7447303545958353,
+      "obs_diff": 0.7931333299162826,
+      "intv_ate": 1.9778470650149085
+    },
+    {
+      "problem_id": 8,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.0226735999782484,
+      "obs_diff": 0.8035278342144421,
+      "intv_ate": 2.017556454697118
+    },
+    {
+      "problem_id": 9,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.7745591893846611,
+      "obs_diff": 0.6197215275317993,
+      "intv_ate": 1.5507527333290274
+    },
+    {
+      "problem_id": 10,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.6199620423596446,
+      "obs_diff": 1.2810283566423513,
+      "intv_ate": 3.191274644492163
+    },
+    {
+      "problem_id": 11,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 1.0121276047484304,
+      "obs_diff": 0.7755987832906412,
+      "intv_ate": 2.0324523049143908
+    },
+    {
+      "problem_id": 12,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 2.7980082631919494,
+      "obs_diff": 2.325311244555329,
+      "intv_ate": 2.9395443736294853
+    },
+    {
+      "problem_id": 13,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.7263217167315064,
+      "obs_diff": 1.2861473358310058,
+      "intv_ate": 3.4082239160731085
+    },
+    {
+      "problem_id": 14,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": 1.1192108156308034,
+      "obs_diff": 1.5210353423372922,
+      "intv_ate": 3.8469730606233545
+    },
+    {
+      "problem_id": 16,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 0.3263417933392075,
+      "obs_diff": 0.20772765311294533,
+      "intv_ate": 0.6509361232839944
+    },
+    {
+      "problem_id": 17,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 0.33496803611811465,
+      "obs_diff": 1.1786955361990001,
+      "intv_ate": 1.110383288775251
+    },
+    {
+      "problem_id": 18,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.7930975847335289,
+      "obs_diff": 0.7087877680710927,
+      "intv_ate": 1.5783858335432022
+    },
+    {
+      "problem_id": 20,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 0.7525586542773134,
+      "obs_diff": 0.64141761116477,
+      "intv_ate": 0.015754105762360186
+    },
+    {
+      "problem_id": 21,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 0.4405389643001602,
+      "obs_diff": 0.3609842296004025,
+      "intv_ate": 0.8718779888279398
+    },
+    {
+      "problem_id": 22,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 0.8523224897613846,
+      "obs_diff": 0.6629925375546135,
+      "intv_ate": 1.6224041981290171
+    },
+    {
+      "problem_id": 23,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.8455173262773228,
+      "obs_diff": 1.525706751555041,
+      "intv_ate": 0.009393599840410228
+    },
+    {
+      "problem_id": 24,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 1.5064749430890385,
+      "obs_diff": 1.1854419557934235,
+      "intv_ate": 3.0248879161375495
+    },
+    {
+      "problem_id": 25,
+      "treatment": "X2",
+      "outcome": "X5",
+      "true_ate": 1.4671998111225357,
+      "obs_diff": 1.855607205896133,
+      "intv_ate": 4.564356387832744
+    },
+    {
+      "problem_id": 26,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": 1.3798133405638928,
+      "obs_diff": 1.0872655404576395,
+      "intv_ate": 2.7263895269683545
+    },
+    {
+      "problem_id": 29,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.8282575819550222,
+      "obs_diff": 0.6671655926260912,
+      "intv_ate": 1.7040719207520456
+    },
+    {
+      "problem_id": 30,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 1.7713219641045221,
+      "obs_diff": 3.7276514910206786,
+      "intv_ate": 7.408484105489468
+    },
+    {
+      "problem_id": 31,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.1394215103652339,
+      "obs_diff": 0.9920714038843961,
+      "intv_ate": 2.2877507298108197
+    },
+    {
+      "problem_id": 33,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": 0.8765749729359515,
+      "obs_diff": 0.7047437886049033,
+      "intv_ate": 1.8012684186019432
+    },
+    {
+      "problem_id": 35,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.410960335443874,
+      "obs_diff": 1.1966688998913535,
+      "intv_ate": 2.696086141947713
+    },
+    {
+      "problem_id": 36,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 0.46763166596363315,
+      "obs_diff": 0.3523586258847379,
+      "intv_ate": -0.001975097860796508
+    },
+    {
+      "problem_id": 37,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 0.7229579283225057,
+      "obs_diff": 1.7909598291948146,
+      "intv_ate": 3.042763299140935
+    },
+    {
+      "problem_id": 38,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 1.7079246867550675,
+      "obs_diff": 1.3531719512856735,
+      "intv_ate": 2.1592846199970994
+    },
+    {
+      "problem_id": 39,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 0.6558944138368408,
+      "obs_diff": 0.47399225038412296,
+      "intv_ate": 1.31848451892143
+    },
+    {
+      "problem_id": 40,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.6102447891158228,
+      "obs_diff": 0.5025470994718895,
+      "intv_ate": 1.234399320476453
+    },
+    {
+      "problem_id": 41,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.0501997443697755,
+      "obs_diff": 1.8220490359799855,
+      "intv_ate": 2.731075274736153
+    },
+    {
+      "problem_id": 42,
+      "treatment": "X2",
+      "outcome": "X5",
+      "true_ate": 3.1098955455032096,
+      "obs_diff": 2.5530579626943215,
+      "intv_ate": -0.04054439342954102
+    },
+    {
+      "problem_id": 43,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": 0.7125502109945927,
+      "obs_diff": 1.1158903267451405,
+      "intv_ate": 2.7354338048873137
+    },
+    {
+      "problem_id": 44,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": 1.1855653772239139,
+      "obs_diff": 2.3410364194017035,
+      "intv_ate": 4.561891791423175
+    },
+    {
+      "problem_id": 45,
+      "treatment": "X3",
+      "outcome": "X5",
+      "true_ate": 1.103586459228229,
+      "obs_diff": 2.9412175291657445,
+      "intv_ate": 5.380062456002074
+    },
+    {
+      "problem_id": 46,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.5535324349601742,
+      "obs_diff": 1.4953131154621992,
+      "intv_ate": 3.761197323391504
+    },
+    {
+      "problem_id": 47,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.8192598193759111,
+      "obs_diff": 0.6901240011140344,
+      "intv_ate": 1.6368465587728327
+    },
+    {
+      "problem_id": 48,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 1.3399637037178054,
+      "obs_diff": 1.1339543228548923,
+      "intv_ate": 2.696623201660475
+    },
+    {
+      "problem_id": 49,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 1.781293151850817,
+      "obs_diff": 1.4448443231616008,
+      "intv_ate": 3.605191557624109
+    },
+    {
+      "problem_id": 50,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": 1.423126583845672,
+      "obs_diff": 3.333940438456727,
+      "intv_ate": 4.769451523176773
+    },
+    {
+      "problem_id": 51,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": 0.7242551611235475,
+      "obs_diff": 0.9181642498448561,
+      "intv_ate": 2.3779596786257473
+    },
+    {
+      "problem_id": 52,
+      "treatment": "X3",
+      "outcome": "X5",
+      "true_ate": 0.7613210848042091,
+      "obs_diff": 0.6239683483178152,
+      "intv_ate": 1.5180098945728964
+    },
+    {
+      "problem_id": 53,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.6347687853102766,
+      "obs_diff": 1.3012915361689,
+      "intv_ate": 3.266525575059174
+    },
+    {
+      "problem_id": 54,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": 0.8731066989176486,
+      "obs_diff": 0.6526650254061335,
+      "intv_ate": 1.740803678905527
+    },
+    {
+      "problem_id": 55,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.4774296118502503,
+      "obs_diff": 0.3984344314232856,
+      "intv_ate": 0.9677418295207127
+    },
+    {
+      "problem_id": 56,
+      "treatment": "X0",
+      "outcome": "X5",
+      "true_ate": 1.6957402685289868,
+      "obs_diff": 1.347040366266235,
+      "intv_ate": 3.4311156070036164
+    },
+    {
+      "problem_id": 58,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 0.925913187354096,
+      "obs_diff": 0.7467734367917958,
+      "intv_ate": 1.8311197727750272
+    },
+    {
+      "problem_id": 59,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 0.7200052418331953,
+      "obs_diff": 0.6396846878993963,
+      "intv_ate": 1.4585637014678519
+    },
+    {
+      "problem_id": 60,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.5555427067026544,
+      "obs_diff": 0.42549543760653347,
+      "intv_ate": 1.1017182988330747
+    },
+    {
+      "problem_id": 61,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 1.4823582245640259,
+      "obs_diff": 1.2017713514949824,
+      "intv_ate": 2.9693980893590846
+    },
+    {
+      "problem_id": 62,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 0.30423939306978637,
+      "obs_diff": 0.2792083510157183,
+      "intv_ate": 0.6158405430410346
+    },
+    {
+      "problem_id": 63,
+      "treatment": "X3",
+      "outcome": "X5",
+      "true_ate": 1.9080060813906352,
+      "obs_diff": 2.3413201277016773,
+      "intv_ate": 4.244442495970439
+    },
+    {
+      "problem_id": 64,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 2.9667450946092297,
+      "obs_diff": 2.4004721994527576,
+      "intv_ate": 3.2668150779493943
+    },
+    {
+      "problem_id": 66,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 0.6320124137333927,
+      "obs_diff": 0.34952673614509405,
+      "intv_ate": 1.2948206788448955
+    },
+    {
+      "problem_id": 67,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": 1.2296492096293374,
+      "obs_diff": 0.9779987214246644,
+      "intv_ate": 2.449031319140936
+    },
+    {
+      "problem_id": 69,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.8055713815398831,
+      "obs_diff": 0.6510191209370906,
+      "intv_ate": 1.6214000458842726
+    },
+    {
+      "problem_id": 70,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": 0.6575763359402876,
+      "obs_diff": 0.46374808392260136,
+      "intv_ate": 1.3300236850265872
+    },
+    {
+      "problem_id": 71,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 1.6876936835215661,
+      "obs_diff": 1.4255884342118916,
+      "intv_ate": 3.470071697924845
+    },
+    {
+      "problem_id": 72,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 1.0302208253576095,
+      "obs_diff": 1.0471184787323529,
+      "intv_ate": 2.6785117357833625
+    },
+    {
+      "problem_id": 73,
+      "treatment": "X1",
+      "outcome": "X5",
+      "true_ate": 2.676359259157191,
+      "obs_diff": 2.176582941606837,
+      "intv_ate": 1.749484223672291
+    },
+    {
+      "problem_id": 74,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.6322270932123342,
+      "obs_diff": 0.5150744155155568,
+      "intv_ate": 1.2147429295018486
+    },
+    {
+      "problem_id": 75,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.4861889576022467,
+      "obs_diff": 1.1884479456179555,
+      "intv_ate": 2.9479046610023087
+    },
+    {
+      "problem_id": 76,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.4426759390330409,
+      "obs_diff": 0.38086277595133644,
+      "intv_ate": 0.8613507491769847
+    },
+    {
+      "problem_id": 78,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.8407689607955988,
+      "obs_diff": 0.6646088022611752,
+      "intv_ate": 1.6460280300024597
+    },
+    {
+      "problem_id": 79,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.9695937033993356,
+      "obs_diff": 0.7796201273615906,
+      "intv_ate": 1.9606076984715763
+    },
+    {
+      "problem_id": 80,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": 1.6912680415477104,
+      "obs_diff": 1.3581223585282713,
+      "intv_ate": 3.3765419805911447
+    },
+    {
+      "problem_id": 81,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.7976162079548654,
+      "obs_diff": 1.42126170122786,
+      "intv_ate": 3.5746604432447464
+    },
+    {
+      "problem_id": 83,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": 0.6435017253265034,
+      "obs_diff": 0.517406987163407,
+      "intv_ate": 1.351824406230655
+    },
+    {
+      "problem_id": 84,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 1.5783945540063011,
+      "obs_diff": 1.2303206356919798,
+      "intv_ate": 3.113668554476255
+    },
+    {
+      "problem_id": 85,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": 1.5036604345645337,
+      "obs_diff": 1.22371155775153,
+      "intv_ate": 3.0324226428045415
+    },
+    {
+      "problem_id": 87,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.49238271532424777,
+      "obs_diff": 0.4015277644796741,
+      "intv_ate": 1.00539533089762
+    },
+    {
+      "problem_id": 88,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.9921604706575538,
+      "obs_diff": 0.7838406871813085,
+      "intv_ate": 1.940584956170697
+    },
+    {
+      "problem_id": 90,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.3522870110362257,
+      "obs_diff": 0.2760230341900697,
+      "intv_ate": 0.6978852626378265
+    },
+    {
+      "problem_id": 91,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 1.4512467365928325,
+      "obs_diff": 1.1621303006773527,
+      "intv_ate": 2.842179151441191
+    },
+    {
+      "problem_id": 93,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.734721370387757,
+      "obs_diff": 1.3826815118636455,
+      "intv_ate": 3.44435628997278
+    },
+    {
+      "problem_id": 94,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 1.9291155246951366,
+      "obs_diff": 1.5456667343599166,
+      "intv_ate": 2.0662367007911056
+    },
+    {
+      "problem_id": 97,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 1.2181815002555734,
+      "obs_diff": 0.9580076933304346,
+      "intv_ate": 2.443459463824515
+    },
+    {
+      "problem_id": 99,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 1.3194511183745627,
+      "obs_diff": 1.083948135104258,
+      "intv_ate": 2.6814226682384597
+    },
+    {
+      "problem_id": 100,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 0.6144891416128577,
+      "obs_diff": 1.5411540291538286,
+      "intv_ate": 1.6591878359307473
+    },
+    {
+      "problem_id": 101,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 0.4464204896025563,
+      "obs_diff": 0.3147180847481885,
+      "intv_ate": -0.006175223966427974
+    },
+    {
+      "problem_id": 102,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.8236104121096024,
+      "obs_diff": 0.6171318141453308,
+      "intv_ate": 1.6040779402254255
+    },
+    {
+      "problem_id": 103,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": 1.2879667182483654,
+      "obs_diff": 1.0283974648087564,
+      "intv_ate": 2.2808493010197406
+    },
+    {
+      "problem_id": 104,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 1.792755373925829,
+      "obs_diff": 2.901367581734844,
+      "intv_ate": 6.039765782214978
+    },
+    {
+      "problem_id": 107,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.9976790797632755,
+      "obs_diff": 0.7965886208221044,
+      "intv_ate": 2.008649215318793
+    },
+    {
+      "problem_id": 108,
+      "treatment": "X0",
+      "outcome": "X5",
+      "true_ate": 2.5929798190640483,
+      "obs_diff": 2.0700460047296207,
+      "intv_ate": 0.0054675987400691715
+    },
+    {
+      "problem_id": 109,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.7654598877992544,
+      "obs_diff": 1.4804066041438868,
+      "intv_ate": 3.6457061168036096
+    },
+    {
+      "problem_id": 110,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.516500623789117,
+      "obs_diff": 0.40260665393289463,
+      "intv_ate": 1.056279603932772
+    },
+    {
+      "problem_id": 111,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.8680294192532707,
+      "obs_diff": 0.7198137658272603,
+      "intv_ate": 1.712395816738686
+    },
+    {
+      "problem_id": 112,
+      "treatment": "X0",
+      "outcome": "X5",
+      "true_ate": 1.9807529615011799,
+      "obs_diff": 1.6203279074842432,
+      "intv_ate": 0.022752546227893578
+    },
+    {
+      "problem_id": 113,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 1.7795307314454414,
+      "obs_diff": 1.381572165879315,
+      "intv_ate": 3.588521973898821
+    },
+    {
+      "problem_id": 114,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.801589767202072,
+      "obs_diff": 2.334028115613031,
+      "intv_ate": 3.0667731490597996
+    },
+    {
+      "problem_id": 115,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 1.6062598266862549,
+      "obs_diff": 1.294510257795729,
+      "intv_ate": 3.210895051576693
+    },
+    {
+      "problem_id": 116,
+      "treatment": "X1",
+      "outcome": "X5",
+      "true_ate": 1.5031943907472969,
+      "obs_diff": 1.2044995509805925,
+      "intv_ate": 3.046817607542569
+    },
+    {
+      "problem_id": 117,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 1.4433478632634766,
+      "obs_diff": 1.1224447131984856,
+      "intv_ate": 2.8829938853606105
+    },
+    {
+      "problem_id": 118,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 1.621600549799833,
+      "obs_diff": 1.2753536138901704,
+      "intv_ate": 3.2136576899517646
+    },
+    {
+      "problem_id": 119,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.30371119677155234,
+      "obs_diff": 0.23540423378965017,
+      "intv_ate": 0.6270559861958885
+    },
+    {
+      "problem_id": 120,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 0.7349623017109993,
+      "obs_diff": 0.5239831605978831,
+      "intv_ate": -0.012716613388310384
+    },
+    {
+      "problem_id": 121,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.5606967436532149,
+      "obs_diff": 1.328009560944725,
+      "intv_ate": 3.3141944084080888
+    },
+    {
+      "problem_id": 122,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 2.3869050751974115,
+      "obs_diff": 1.880816603470242,
+      "intv_ate": 3.384221837617247
+    },
+    {
+      "problem_id": 123,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.7791357789880362,
+      "obs_diff": 1.4637203865299677,
+      "intv_ate": 3.577090715513772
+    },
+    {
+      "problem_id": 124,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.7921525122015216,
+      "obs_diff": 1.4643946310548988,
+      "intv_ate": 3.576892583552138
+    },
+    {
+      "problem_id": 125,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.7919752676771649,
+      "obs_diff": 0.6689235540825067,
+      "intv_ate": 1.646772947536028
+    },
+    {
+      "problem_id": 126,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.3391772237848859,
+      "obs_diff": 0.2640378652639032,
+      "intv_ate": 0.6692948813075251
+    },
+    {
+      "problem_id": 128,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": 0.40090927745692756,
+      "obs_diff": 0.29936099664388094,
+      "intv_ate": 0.8283738379271319
+    },
+    {
+      "problem_id": 129,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 1.318640470545118,
+      "obs_diff": 1.0425409482502697,
+      "intv_ate": 2.605522190397023
+    },
+    {
+      "problem_id": 130,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.4444790624666968,
+      "obs_diff": 0.3640568057960285,
+      "intv_ate": 0.860048357033879
+    },
+    {
+      "problem_id": 131,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.3014152400769979,
+      "obs_diff": 0.19353962344559944,
+      "intv_ate": 0.6159783462857675
+    },
+    {
+      "problem_id": 132,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.3856727483894407,
+      "obs_diff": 1.09744227936231,
+      "intv_ate": 2.772792282381239
+    },
+    {
+      "problem_id": 133,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": 1.589568216427198,
+      "obs_diff": 1.27071855199946,
+      "intv_ate": 3.1318591007753245
+    },
+    {
+      "problem_id": 134,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": 0.5839918583762581,
+      "obs_diff": 0.5189658872381847,
+      "intv_ate": -0.00516780702454945
+    },
+    {
+      "problem_id": 135,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.2599673219967453,
+      "obs_diff": 1.0626200302435267,
+      "intv_ate": 2.549823594335698
+    },
+    {
+      "problem_id": 136,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 0.41702534403668823,
+      "obs_diff": 0.3024971878489411,
+      "intv_ate": 0.8059445199302099
+    },
+    {
+      "problem_id": 137,
+      "treatment": "X2",
+      "outcome": "X5",
+      "true_ate": 0.5041707278147286,
+      "obs_diff": 1.8244138036886923,
+      "intv_ate": 1.2368618966554907
+    },
+    {
+      "problem_id": 138,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.9525591989280826,
+      "obs_diff": 0.7290436463284735,
+      "intv_ate": 1.890099234278237
+    },
+    {
+      "problem_id": 140,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 1.5334077793136178,
+      "obs_diff": 1.189911677007423,
+      "intv_ate": 2.9604004307917373
+    },
+    {
+      "problem_id": 141,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": 1.2850270949409113,
+      "obs_diff": 1.0408101847701954,
+      "intv_ate": 2.5771993939116284
+    },
+    {
+      "problem_id": 142,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 1.734426799393653,
+      "obs_diff": 1.371255690109391,
+      "intv_ate": 3.412825639895157
+    },
+    {
+      "problem_id": 143,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 1.70660608373561,
+      "obs_diff": 1.3608099018567572,
+      "intv_ate": 3.4043502333865487
+    },
+    {
+      "problem_id": 145,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 0.7217810096628507,
+      "obs_diff": 0.6132926130544321,
+      "intv_ate": 1.4330012940170906
+    },
+    {
+      "problem_id": 146,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 1.6907509819200541,
+      "obs_diff": 1.3858942093739055,
+      "intv_ate": 3.4725591280190256
+    },
+    {
+      "problem_id": 147,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 0.8899946452858611,
+      "obs_diff": 0.71971645883647,
+      "intv_ate": 1.7977943287262566
+    },
+    {
+      "problem_id": 148,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.230986752123367,
+      "obs_diff": 0.9776077370939958,
+      "intv_ate": 2.400770130587105
+    },
+    {
+      "problem_id": 149,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 1.2659472801952167,
+      "obs_diff": 0.9702705424892581,
+      "intv_ate": 2.4204949591829266
+    }
+  ]
+}

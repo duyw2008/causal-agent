@@ -1,0 +1,93 @@
+{
+  "n_domains": 8,
+  "domains": [
+    {
+      "domain": "medical",
+      "var_names_cn": [
+        "年龄",
+        "治疗",
+        "康复"
+      ],
+      "true_ate": 0.6,
+      "obs_diff": 1.3036569266728169,
+      "confounding_bias": 0.7036569266728169
+    },
+    {
+      "domain": "economics",
+      "var_names_cn": [
+        "家庭背景",
+        "教育",
+        "收入"
+      ],
+      "true_ate": 0.6,
+      "obs_diff": 1.3217324939034067,
+      "confounding_bias": 0.7217324939034068
+    },
+    {
+      "domain": "marketing",
+      "var_names_cn": [
+        "季节",
+        "广告投入",
+        "销售额"
+      ],
+      "true_ate": 0.6,
+      "obs_diff": 1.3448587088471744,
+      "confounding_bias": 0.7448587088471744
+    },
+    {
+      "domain": "education",
+      "var_names_cn": [
+        "学习动机",
+        "学习时间",
+        "成绩"
+      ],
+      "true_ate": 0.6,
+      "obs_diff": 1.3965967305514526,
+      "confounding_bias": 0.7965967305514526
+    },
+    {
+      "domain": "sports",
+      "var_names_cn": [
+        "天赋",
+        "训练量",
+        "表现"
+      ],
+      "true_ate": 0.6,
+      "obs_diff": 1.299560435066879,
+      "confounding_bias": 0.699560435066879
+    },
+    {
+      "domain": "software",
+      "var_names_cn": [
+        "团队规模",
+        "代码质量",
+        "缺陷数"
+      ],
+      "true_ate": 0.6,
+      "obs_diff": 1.327896216540006,
+      "confounding_bias": 0.7278962165400059
+    },
+    {
+      "domain": "climate",
+      "var_names_cn": [
+        "二氧化碳",
+        "温度",
+        "海冰面积"
+      ],
+      "true_ate": 0.6,
+      "obs_diff": 1.3255365179863898,
+      "confounding_bias": 0.7255365179863899
+    },
+    {
+      "domain": "psychology",
+      "var_names_cn": [
+        "压力",
+        "睡眠质量",
+        "情绪"
+      ],
+      "true_ate": 0.6,
+      "obs_diff": 1.3324499777551364,
+      "confounding_bias": 0.7324499777551364
+    }
+  ]
+}

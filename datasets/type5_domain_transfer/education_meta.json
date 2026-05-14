@@ -1,0 +1,35 @@
+{
+  "domain": "education",
+  "var_names": [
+    "Motivation",
+    "StudyHours",
+    "Grade"
+  ],
+  "var_names_cn": [
+    "学习动机",
+    "学习时间",
+    "成绩"
+  ],
+  "edges": [
+    [
+      "Motivation",
+      "StudyHours"
+    ],
+    [
+      "Motivation",
+      "Grade"
+    ],
+    [
+      "StudyHours",
+      "Grade"
+    ]
+  ],
+  "true_ate": 0.6,
+  "obs_diff": 1.3965967305514526,
+  "confounding_bias": 0.7965967305514526,
+  "backdoor_set": [
+    "Motivation"
+  ],
+  "n_samples": 1000,
+  "csv_file": "education.csv"
+}

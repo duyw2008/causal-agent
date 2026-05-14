@@ -1,0 +1,2405 @@
+{
+  "n_problems": 300,
+  "problems": [
+    {
+      "problem_id": 0,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.7737566718582118,
+      "obs_diff": 1.3812425478827581,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 1,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.3740924947289508,
+      "obs_diff": 1.089344011998485,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 2,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -0.4690255729523838,
+      "obs_diff": -0.3908530100715082,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 3,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.117957230508408,
+      "obs_diff": 0.8747527869668765,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 4,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 1.0977873011202934,
+      "obs_diff": 0.7621580270755386,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 5,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.43394337731755767,
+      "obs_diff": 0.3812788614116117,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 6,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": -0.5593893836763018,
+      "obs_diff": -0.42257961026065105,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 7,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": -0.5004556075768138,
+      "obs_diff": -0.36105519712584827,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 8,
+      "treatment": "X1",
+      "outcome": "X5",
+      "true_ate": 3.9043259646538786,
+      "obs_diff": 3.201338901301151,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 9,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 0.4874463165456745,
+      "obs_diff": 0.40313720206577597,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 10,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": 0.821478952632011,
+      "obs_diff": 0.5173152342353995,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 11,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.9362410727822795,
+      "obs_diff": 0.7415280786975051,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 12,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.8054279054759889,
+      "obs_diff": 1.4038202448761856,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 13,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.46005047107560826,
+      "obs_diff": 0.36281778075204796,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 14,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.1187360046833121,
+      "obs_diff": -0.9774084113265094,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 15,
+      "treatment": "X0",
+      "outcome": "X5",
+      "true_ate": 1.2241111005267475,
+      "obs_diff": 1.0316709825253865,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 16,
+      "treatment": "X1",
+      "outcome": "X5",
+      "true_ate": -1.9667364278522879,
+      "obs_diff": -0.4897678924804419,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 17,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -1.1752965441559442,
+      "obs_diff": -0.9693259678544608,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 18,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -0.3475598289603956,
+      "obs_diff": -0.2877154348158578,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 19,
+      "treatment": "X1",
+      "outcome": "X5",
+      "true_ate": -1.8599548659175031,
+      "obs_diff": -1.3774471677631095,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 20,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.8983605342545226,
+      "obs_diff": 0.715195951857349,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 21,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -1.9066857480328232,
+      "obs_diff": -1.567314213512756,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 22,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.7409191233016514,
+      "obs_diff": 1.3529573564677384,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 23,
+      "treatment": "X2",
+      "outcome": "X5",
+      "true_ate": -0.5443655558038474,
+      "obs_diff": -0.4001580038268192,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 24,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -1.3078856482865722,
+      "obs_diff": -1.0243430458608556,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 25,
+      "treatment": "X2",
+      "outcome": "X5",
+      "true_ate": -1.5671910067706007,
+      "obs_diff": -1.3875724027070584,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 26,
+      "treatment": "X4",
+      "outcome": "X5",
+      "true_ate": -1.482079567740517,
+      "obs_diff": -1.955823769514423,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 27,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.0201985967967877,
+      "obs_diff": -0.8245658498995245,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 28,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.6938965986757792,
+      "obs_diff": 1.3019715389738877,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 29,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": -1.6536805674034039,
+      "obs_diff": -1.3425004635724878,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 30,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": -1.5798215383628036,
+      "obs_diff": -1.195961858251928,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 31,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 3.147985888567767,
+      "obs_diff": 2.5253421301376915,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 32,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.4280009095755948,
+      "obs_diff": -1.1382320274833586,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 33,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 2.7636333836253777,
+      "obs_diff": 2.2043053759063618,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 34,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": 2.035943777161757,
+      "obs_diff": 1.6304212171844665,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 35,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": -2.693488035786572,
+      "obs_diff": -2.2296309206003455,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 36,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.8154353607752056,
+      "obs_diff": 3.2585435224305574,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 37,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.6013605816938821,
+      "obs_diff": 0.5048908816422535,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 38,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.632703582951835,
+      "obs_diff": -1.315080830305385,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 39,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 1.0019445578529345,
+      "obs_diff": 0.8255342826319864,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 40,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": -1.974379973230468,
+      "obs_diff": -1.68260883698196,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 41,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": -1.7307236877894678,
+      "obs_diff": -1.423207329479602,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 42,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.5220479403561993,
+      "obs_diff": 1.1639499868771583,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 43,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": -0.664967193762394,
+      "obs_diff": -0.7082785460207484,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 44,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -1.6773467042644823,
+      "obs_diff": -1.2535881994741906,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 45,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -1.9324336682859333,
+      "obs_diff": -1.5171158948701686,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 46,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": -1.5332443024024531,
+      "obs_diff": -1.2798690302875135,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 47,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.631179923393836,
+      "obs_diff": -1.3019685942069366,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 48,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.6999097108540058,
+      "obs_diff": 2.7663409216226276,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 49,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -3.5830249922718,
+      "obs_diff": -2.9031995635839243,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 50,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.1980491039122327,
+      "obs_diff": 0.9476353555079365,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 51,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.2595945634543328,
+      "obs_diff": 0.9904476581815774,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 52,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.5828889768675847,
+      "obs_diff": 0.4398849569294842,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 53,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 1.5323409565023471,
+      "obs_diff": 1.2119880637747973,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 54,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": 1.9352278403728773,
+      "obs_diff": 1.5413157803387623,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 55,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.1230064365693249,
+      "obs_diff": 0.7902342525490054,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 56,
+      "treatment": "X0",
+      "outcome": "X5",
+      "true_ate": 7.621459831915801,
+      "obs_diff": 5.739326571915896,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 57,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": -0.8670748214811055,
+      "obs_diff": -0.6159180605968224,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 58,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": -1.5244548541039586,
+      "obs_diff": -1.2767435130340021,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 59,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": 1.4600093201911393,
+      "obs_diff": 1.1513752531750319,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 60,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": -1.279123668171303,
+      "obs_diff": -0.9853890923289909,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 61,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 1.9295092186383869,
+      "obs_diff": 1.6625243689079339,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 62,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.416182223377898,
+      "obs_diff": 1.1812527084315572,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 63,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 1.8272780760676386,
+      "obs_diff": 1.415593950747141,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 64,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 0.9214349651185908,
+      "obs_diff": 0.7220061052172866,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 65,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 1.1984391862109969,
+      "obs_diff": 1.011640070336518,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 66,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": -0.7620916242076844,
+      "obs_diff": -0.6708148750687746,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 67,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -0.6470881868167672,
+      "obs_diff": -0.5154192787055927,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 68,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -0.7817270561611415,
+      "obs_diff": -0.56777971309685,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 69,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -2.114533671967105,
+      "obs_diff": -1.6764789025489881,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 70,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": -1.4801979211733465,
+      "obs_diff": -1.1464942549024957,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 71,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.1263346691127556,
+      "obs_diff": -0.8779503427584512,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 72,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -0.9920225263186243,
+      "obs_diff": -0.7870539021227252,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 73,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 0.5716482857412792,
+      "obs_diff": 0.4285168058944192,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 74,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 1.5955720585029418,
+      "obs_diff": 1.272304694717538,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 75,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -0.7332602059649066,
+      "obs_diff": -0.6074294374319664,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 76,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": -1.8432968377997208,
+      "obs_diff": -2.852475322780067,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 77,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.9788545618151194,
+      "obs_diff": 0.7803179926279764,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 78,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.4678641130062897,
+      "obs_diff": 1.1573676565810846,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 79,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": -0.9373701715504329,
+      "obs_diff": -0.7786563398976065,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 80,
+      "treatment": "X3",
+      "outcome": "X5",
+      "true_ate": -1.338998424686889,
+      "obs_diff": -2.027180910918086,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 81,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": -0.6942681604093117,
+      "obs_diff": -0.567281834447064,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 82,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -1.1300802787559503,
+      "obs_diff": -0.8731656365954749,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 83,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": -3.83563740703882,
+      "obs_diff": -3.103022533321006,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 84,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 0.40130126025441126,
+      "obs_diff": 0.3239850476524201,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 85,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -3.1788603187563504,
+      "obs_diff": -2.4438692843554763,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 86,
+      "treatment": "X2",
+      "outcome": "X5",
+      "true_ate": -0.6928176744247745,
+      "obs_diff": -0.642859389915347,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 87,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -0.535983847298102,
+      "obs_diff": -0.37322774652684154,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 88,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": -1.9216037702504458,
+      "obs_diff": -2.941562242490339,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 89,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -1.798590027073482,
+      "obs_diff": -1.4791065659251665,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 90,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.7050915520957282,
+      "obs_diff": 0.5598841434437172,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 91,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -0.6644258314753732,
+      "obs_diff": -0.5655021346478981,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 92,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": -0.8549052607282827,
+      "obs_diff": -0.6687707600617863,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 93,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 1.4037347033877212,
+      "obs_diff": 1.184408180239517,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 94,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": -1.3538894409886728,
+      "obs_diff": -1.7455405132289052,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 95,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.8733311206051191,
+      "obs_diff": 0.7431211780773826,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 96,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 1.89720565238748,
+      "obs_diff": 1.461252674031819,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 97,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": -0.5179725493846951,
+      "obs_diff": -0.4307989675782932,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 98,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": 1.9292319707777676,
+      "obs_diff": 3.6733570406111475,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 99,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.5403280147011369,
+      "obs_diff": 0.41042212956542345,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 100,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.4651402007423795,
+      "obs_diff": 1.1451546744744214,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 101,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": -1.8697935648447088,
+      "obs_diff": -1.4916110767893553,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 102,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -1.991830974672908,
+      "obs_diff": -1.5995716273687173,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 103,
+      "treatment": "X1",
+      "outcome": "X5",
+      "true_ate": 3.2997238172078682,
+      "obs_diff": 2.530764554343701,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 104,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.8705835305036205,
+      "obs_diff": 0.6250834377558833,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 105,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 1.4288566053766392,
+      "obs_diff": 1.0877884671611358,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 106,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": 1.4912908840742718,
+      "obs_diff": 1.2064504123148094,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 107,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 0.4562144201224813,
+      "obs_diff": 0.7689363221199321,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 108,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.5318492413498048,
+      "obs_diff": 2.4370345167430782,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 109,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -0.75222901507191,
+      "obs_diff": -0.5816503878089492,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 110,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 1.3191857198495047,
+      "obs_diff": 2.1630880409971915,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 111,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.763078505262139,
+      "obs_diff": 1.3888656351641608,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 112,
+      "treatment": "X0",
+      "outcome": "X5",
+      "true_ate": -3.528787812325462,
+      "obs_diff": -2.7938175808684758,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 113,
+      "treatment": "X0",
+      "outcome": "X5",
+      "true_ate": -0.7393500553838308,
+      "obs_diff": -0.6532103400086056,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 114,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.6888237929709367,
+      "obs_diff": 0.49063753892763595,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 115,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.9046312706212789,
+      "obs_diff": 0.6937387804053964,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 116,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 1.211873063815303,
+      "obs_diff": 1.0292423643411337,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 117,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -0.9478097876749376,
+      "obs_diff": -0.7610230811886556,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 118,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -1.5052435209892567,
+      "obs_diff": -1.1840323108217716,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 119,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -0.6748080091269144,
+      "obs_diff": -0.5350649640239484,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 120,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": 3.029407744347242,
+      "obs_diff": 2.494614464555182,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 121,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.8335757431550617,
+      "obs_diff": 0.6460414914777138,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 122,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": -1.151894397231112,
+      "obs_diff": -0.910593497931788,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 123,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": -0.5103320257651573,
+      "obs_diff": -0.40335778768274866,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 124,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -0.5762768153814991,
+      "obs_diff": -0.4495556934828967,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 125,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.46301009511587954,
+      "obs_diff": 0.3861932461834555,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 126,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": -0.5009537649496277,
+      "obs_diff": -0.41511226055578826,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 127,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": -0.5481308753590076,
+      "obs_diff": -0.4390527794139849,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 128,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": 0.47110059668270843,
+      "obs_diff": 0.34852023855304837,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 129,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": -1.784408290164428,
+      "obs_diff": -1.4291257785588645,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 130,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": -0.5453193579356219,
+      "obs_diff": -0.4514583882320963,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 131,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.1677860252490313,
+      "obs_diff": -0.8392480516219349,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 132,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -1.470828871774526,
+      "obs_diff": -1.2480176775310725,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 133,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -0.8513979391919158,
+      "obs_diff": -0.7029179997505965,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 134,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.9077600396009422,
+      "obs_diff": 1.4714281881884246,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 135,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": -1.1019193159194194,
+      "obs_diff": -0.9173029620916396,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 136,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.41132621918023315,
+      "obs_diff": 0.3397764258587382,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 137,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.2742192041011604,
+      "obs_diff": -1.029603569832024,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 138,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.5004180243766365,
+      "obs_diff": 0.3624815380395029,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 139,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": -0.946762134606924,
+      "obs_diff": -0.5618168307833707,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 140,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -0.748341145309307,
+      "obs_diff": -0.21963114737055853,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 141,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.9582885794124716,
+      "obs_diff": 0.8168101736116146,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 142,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.6405085817759386,
+      "obs_diff": 0.5094377268995897,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 143,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.5215431383638836,
+      "obs_diff": 0.7066680232768016,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 144,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.7975582512324018,
+      "obs_diff": 0.6433777157377372,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 145,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": 0.5381678837898378,
+      "obs_diff": 0.1675065284548156,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 146,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": -1.27903007344764,
+      "obs_diff": -1.0339004909541551,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 147,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 0.5737754093744383,
+      "obs_diff": 0.31394197117929046,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 148,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.9195155176130858,
+      "obs_diff": 1.545270746886006,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 149,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.8591144125812452,
+      "obs_diff": 0.6948285815983547,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 150,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.4251758846784441,
+      "obs_diff": 1.0985820199294527,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 151,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": -1.5961465481296364,
+      "obs_diff": -1.2450340817026386,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 152,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -1.3362797640580242,
+      "obs_diff": -1.0632136267679582,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 153,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": -1.7782693442872333,
+      "obs_diff": -2.3468178268355278,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 154,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": -1.944160742850062,
+      "obs_diff": -2.108661127248246,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 155,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.265257737362763,
+      "obs_diff": 0.8770861791838704,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 156,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": -1.5539543923344392,
+      "obs_diff": -1.2694694667590651,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 157,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": 0.5749248736577016,
+      "obs_diff": 0.5332735675346567,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 158,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.1502745542907635,
+      "obs_diff": 0.8459330435219881,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 159,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 1.2623234920151072,
+      "obs_diff": 1.035846253731193,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 160,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 0.2067600733245917,
+      "obs_diff": 0.15227192629980008,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 161,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": -1.0232496729489875,
+      "obs_diff": -0.7902774334251572,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 162,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.5373438314669334,
+      "obs_diff": 1.2335497618174665,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 163,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -1.7471512358454644,
+      "obs_diff": -1.3722468208590102,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 164,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": -0.5244000092873062,
+      "obs_diff": -0.432157165233916,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 165,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 0.553200482235625,
+      "obs_diff": 0.42423978942837093,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 166,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": -0.6161908562738019,
+      "obs_diff": -0.9796319750799691,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 167,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": -1.6452195540742234,
+      "obs_diff": -1.1742299108004515,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 168,
+      "treatment": "X0",
+      "outcome": "X5",
+      "true_ate": 0.5204781441293499,
+      "obs_diff": 0.41484871076527535,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 169,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.1311241202540478,
+      "obs_diff": 0.9357339931693875,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 170,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 0.9008272086014856,
+      "obs_diff": 1.314019470276366,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 171,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -0.8766289464649056,
+      "obs_diff": -0.7531602660986814,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 172,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.8390746881243919,
+      "obs_diff": 0.5965154983027154,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 173,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.0432849087136336,
+      "obs_diff": -0.8327581883601601,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 174,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -1.4698045189470315,
+      "obs_diff": -1.126326034151257,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 175,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.95067683841238,
+      "obs_diff": 1.5286257156792251,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 176,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 0.9625568747465737,
+      "obs_diff": 0.7675393257086234,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 177,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -1.0078198892154355,
+      "obs_diff": -0.7786778440525993,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 178,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.7892793277668506,
+      "obs_diff": 1.4518340226497006,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 179,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": 1.039408749668473,
+      "obs_diff": 0.8192910125082069,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 180,
+      "treatment": "X1",
+      "outcome": "X5",
+      "true_ate": -1.5417253217131626,
+      "obs_diff": -1.7102195182217108,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 181,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": -0.6784812274496264,
+      "obs_diff": -0.11584786120313414,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 182,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": -0.3156555807495953,
+      "obs_diff": -0.09606712023225228,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 183,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.175384397497565,
+      "obs_diff": -0.9877798546008922,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 184,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 0.8491448729445529,
+      "obs_diff": 0.6756777481142581,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 185,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -1.7991010600258552,
+      "obs_diff": -1.4455176281823447,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 186,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": -0.5203643445587928,
+      "obs_diff": -0.8429423144546055,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 187,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -1.5637741269823429,
+      "obs_diff": -1.208602973023515,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 188,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 1.503550215702583,
+      "obs_diff": 1.1607574542534191,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 189,
+      "treatment": "X0",
+      "outcome": "X5",
+      "true_ate": -2.412968338541723,
+      "obs_diff": -1.899136789500155,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 190,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": 0.7208267496779837,
+      "obs_diff": 2.2379436917103006,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 191,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.7356502038800605,
+      "obs_diff": 3.1188726340600175,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 192,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": 1.0375293273583117,
+      "obs_diff": 0.7601737670892926,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 193,
+      "treatment": "X0",
+      "outcome": "X5",
+      "true_ate": -0.8396409084555542,
+      "obs_diff": -0.6441729715978697,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 194,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -0.7963196166318576,
+      "obs_diff": -0.659317758661879,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 195,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.0166413778953842,
+      "obs_diff": 0.7959428585746054,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 196,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.8094466878934548,
+      "obs_diff": 0.6393333284595041,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 197,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 1.1581843171258666,
+      "obs_diff": 0.8995289661225419,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 198,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -1.9220340750753095,
+      "obs_diff": -1.5379027727586283,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 199,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": 4.56836749037983,
+      "obs_diff": 3.5264847117825155,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 200,
+      "treatment": "X2",
+      "outcome": "X5",
+      "true_ate": 1.715245530235177,
+      "obs_diff": 1.8995851069080945,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 201,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.4206621648902975,
+      "obs_diff": 1.1553596679576223,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 202,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 0.6134488427455138,
+      "obs_diff": 0.45054399918654164,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 203,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -1.828783436957779,
+      "obs_diff": -1.437993672525379,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 204,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": -3.656250233510759,
+      "obs_diff": -2.9598922833081938,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 205,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": -1.109183559777887,
+      "obs_diff": -0.9138367324860173,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 206,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 0.7756166268870963,
+      "obs_diff": 0.6324268972644513,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 207,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 0.8870070975339476,
+      "obs_diff": 0.7176260386265922,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 208,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.770614454520319,
+      "obs_diff": -1.3850866398011603,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 209,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.493879779622505,
+      "obs_diff": 1.181424014210998,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 210,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.5264760155116885,
+      "obs_diff": -1.2099495240373157,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 211,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -0.6895040703030896,
+      "obs_diff": -0.5878107772572707,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 212,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.6581734878034948,
+      "obs_diff": 1.3695938255279638,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 213,
+      "treatment": "X1",
+      "outcome": "X5",
+      "true_ate": 1.690184012104058,
+      "obs_diff": 1.368270032028863,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 214,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.4559348225599615,
+      "obs_diff": 1.2424391735297873,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 215,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 1.2640913978718649,
+      "obs_diff": 1.0555937942178106,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 216,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -1.1884049767076248,
+      "obs_diff": -0.9689415698352255,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 217,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.8323131159381787,
+      "obs_diff": 1.4756144923422527,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 218,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.3022026788472378,
+      "obs_diff": 1.0039612397192426,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 219,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": 1.417602539295308,
+      "obs_diff": 0.9666949840415887,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 220,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.6139153333832135,
+      "obs_diff": -1.3514517427804393,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 221,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.586806275085812,
+      "obs_diff": 1.114246628518096,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 222,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.9092397768267169,
+      "obs_diff": 1.555333447495991,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 223,
+      "treatment": "X0",
+      "outcome": "X5",
+      "true_ate": 1.680828797084279,
+      "obs_diff": 1.3033479336236158,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 224,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.7246365522616149,
+      "obs_diff": 0.6257908027076652,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 225,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.1401911242130558,
+      "obs_diff": 0.9363342102918131,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 226,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.48127817982905,
+      "obs_diff": -1.1781880912861804,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 227,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": 1.3586153371314271,
+      "obs_diff": 1.8572267201735977,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 228,
+      "treatment": "X0",
+      "outcome": "X5",
+      "true_ate": 0.6418745055310185,
+      "obs_diff": 0.4161374759060734,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 229,
+      "treatment": "X0",
+      "outcome": "X5",
+      "true_ate": -1.4836102891348566,
+      "obs_diff": -1.2526529808269584,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 230,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": -1.8281463944329843,
+      "obs_diff": -1.4422859752823989,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 231,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 1.8300538229025798,
+      "obs_diff": 1.4738879803838438,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 232,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": -1.939377512319696,
+      "obs_diff": -1.5102961488452795,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 233,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -0.6820948060756826,
+      "obs_diff": -0.5625067563634389,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 234,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -1.011905279376565,
+      "obs_diff": -0.7772414447060136,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 235,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.441982709933023,
+      "obs_diff": 1.2069466045211352,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 236,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -1.007873484154858,
+      "obs_diff": -0.8381923932372197,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 237,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": -1.4174285049650113,
+      "obs_diff": -1.1637377877177983,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 238,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.5155555468965494,
+      "obs_diff": 0.3981259201450753,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 239,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": -0.7606389877963157,
+      "obs_diff": -0.6174085190244304,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 240,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -0.42813763172831154,
+      "obs_diff": -0.36689401507578284,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 241,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -2.989437280041512,
+      "obs_diff": -2.394074432121313,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 242,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": -1.5418541912641155,
+      "obs_diff": -1.2052767037464407,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 243,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.652813020748304,
+      "obs_diff": 1.3390804832702492,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 244,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.4451819480800459,
+      "obs_diff": 2.5645238549176224,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 245,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.7966447181274655,
+      "obs_diff": 0.5985649836969933,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 246,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.034302622782533,
+      "obs_diff": 0.8549082369133629,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 247,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.630398640796321,
+      "obs_diff": 1.2530035953363121,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 248,
+      "treatment": "X1",
+      "outcome": "X4",
+      "true_ate": -1.1026776811072456,
+      "obs_diff": -1.6592297271077077,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 249,
+      "treatment": "X4",
+      "outcome": "X5",
+      "true_ate": -0.5450900206447766,
+      "obs_diff": -0.15056444700499336,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 250,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": -1.9175491180616224,
+      "obs_diff": -3.3328149355211907,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 251,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -1.4198936756481535,
+      "obs_diff": -1.091824991718823,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 252,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": -1.753904115089636,
+      "obs_diff": -1.3851952224113946,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 253,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 0.8566809374834867,
+      "obs_diff": 0.36235283142656055,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 254,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 0.8182674190512902,
+      "obs_diff": 0.6360047617715667,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 255,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.5924973065147268,
+      "obs_diff": -1.3442964303647846,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 256,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 1.7869185530975522,
+      "obs_diff": 1.4901514440666248,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 257,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -0.786553590125938,
+      "obs_diff": -0.5182185546106968,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 258,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -0.7309285026003489,
+      "obs_diff": -0.5409802815325127,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 259,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.8231594270756568,
+      "obs_diff": -1.4401519665105695,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 260,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.4422169287665962,
+      "obs_diff": 1.1220284209848086,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 261,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.3694794968223603,
+      "obs_diff": 1.409976575890099,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 262,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": -1.6102800754808761,
+      "obs_diff": -1.255364285230825,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 263,
+      "treatment": "X0",
+      "outcome": "X5",
+      "true_ate": 1.1062220540247605,
+      "obs_diff": 0.8860671791680192,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 264,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.8132900921501058,
+      "obs_diff": 0.6619857983445323,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 265,
+      "treatment": "X2",
+      "outcome": "X5",
+      "true_ate": 2.1409184181736993,
+      "obs_diff": 4.599668180264995,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 266,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.6485355520268326,
+      "obs_diff": -1.3686643988795386,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 267,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 1.9883376319766755,
+      "obs_diff": 3.997232558126171,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 268,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.6817433791179788,
+      "obs_diff": 1.3253679062744845,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 269,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": -1.939578382851828,
+      "obs_diff": -1.5931393295617156,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 270,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": -1.4787510462003826,
+      "obs_diff": -2.0155539080036426,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 271,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": -1.1798030145591252,
+      "obs_diff": -0.9237675311062099,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 272,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": -1.1903139911388547,
+      "obs_diff": -1.4688605114777618,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 273,
+      "treatment": "X0",
+      "outcome": "X3",
+      "true_ate": 0.6578082258621072,
+      "obs_diff": 0.46640575760143127,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 274,
+      "treatment": "X1",
+      "outcome": "X5",
+      "true_ate": 1.6897473342314298,
+      "obs_diff": 1.4652516852063,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 275,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.0566495559566293,
+      "obs_diff": 0.7867320765185245,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 276,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 0.7943969261672191,
+      "obs_diff": 0.6642602379064456,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 277,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": -0.48638821755382927,
+      "obs_diff": 0.1348245097485696,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 278,
+      "treatment": "X3",
+      "outcome": "X5",
+      "true_ate": 1.3964153175768468,
+      "obs_diff": 2.74194325494451,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 279,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 1.7837912184488403,
+      "obs_diff": 1.4083905308502005,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 280,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": -1.979924621540314,
+      "obs_diff": -1.5332932779090491,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 281,
+      "treatment": "X1",
+      "outcome": "X3",
+      "true_ate": 1.2109114763887878,
+      "obs_diff": 1.4940234852488006,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 282,
+      "treatment": "X0",
+      "outcome": "X4",
+      "true_ate": -1.324137431574368,
+      "obs_diff": -1.0513578947769473,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 283,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.043215530044089,
+      "obs_diff": -0.86531956853021,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 284,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 1.878496075043905,
+      "obs_diff": 1.5233529586992538,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 285,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": 1.8191570422542784,
+      "obs_diff": 1.4648424202434167,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 286,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.7286503009658323,
+      "obs_diff": -1.3862706061998384,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 287,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": 0.9083020753089843,
+      "obs_diff": 0.7605325465073256,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 288,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 1.2513586904873466,
+      "obs_diff": 0.9695334736415708,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 289,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -1.4711472730701636,
+      "obs_diff": -0.8097145665679858,
+      "has_confounding": true
+    },
+    {
+      "problem_id": 290,
+      "treatment": "X0",
+      "outcome": "X1",
+      "true_ate": -1.1601890979118403,
+      "obs_diff": -0.9166566898566705,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 291,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": 1.3267757357325023,
+      "obs_diff": 1.095361763219075,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 292,
+      "treatment": "X3",
+      "outcome": "X4",
+      "true_ate": -1.8272206956722465,
+      "obs_diff": -1.5727039151500368,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 293,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -1.3340333117899097,
+      "obs_diff": -1.05393128127346,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 294,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": -1.7632788100807844,
+      "obs_diff": -1.4289871472417728,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 295,
+      "treatment": "X0",
+      "outcome": "X2",
+      "true_ate": 1.1281022981277444,
+      "obs_diff": 0.9080240617814389,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 296,
+      "treatment": "X1",
+      "outcome": "X2",
+      "true_ate": -0.9219198439240378,
+      "obs_diff": -0.7052258140293319,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 297,
+      "treatment": "X2",
+      "outcome": "X5",
+      "true_ate": 1.7634652057177425,
+      "obs_diff": 1.461381731021543,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 298,
+      "treatment": "X2",
+      "outcome": "X4",
+      "true_ate": 0.8559998124848639,
+      "obs_diff": 0.7210032541663981,
+      "has_confounding": false
+    },
+    {
+      "problem_id": 299,
+      "treatment": "X2",
+      "outcome": "X3",
+      "true_ate": 0.42987799111329733,
+      "obs_diff": 0.3071626979145735,
+      "has_confounding": false
+    }
+  ]
+}

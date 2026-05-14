@@ -1,0 +1,36 @@
+{
+  "graph_id": 41,
+  "n_vars": 3,
+  "n_samples": 500,
+  "var_names": [
+    "X0",
+    "X1",
+    "X2"
+  ],
+  "edges": [
+    [
+      "X0",
+      "X2"
+    ]
+  ],
+  "adj_matrix": [
+    [
+      0,
+      0,
+      1
+    ],
+    [
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      0,
+      0
+    ]
+  ],
+  "v_structures": [],
+  "noise_std": 0.7008954670337048,
+  "csv_file": "graph_0041.csv"
+}

@@ -1,0 +1,805 @@
+{
+  "n_graphs": 100,
+  "graphs": [
+    {
+      "graph_id": 0,
+      "n_vars": 3,
+      "n_edges": 0,
+      "n_v_structures": 0,
+      "csv": "graph_0000.csv",
+      "meta": "graph_0000_meta.json"
+    },
+    {
+      "graph_id": 1,
+      "n_vars": 7,
+      "n_edges": 4,
+      "n_v_structures": 0,
+      "csv": "graph_0001.csv",
+      "meta": "graph_0001_meta.json"
+    },
+    {
+      "graph_id": 2,
+      "n_vars": 6,
+      "n_edges": 5,
+      "n_v_structures": 0,
+      "csv": "graph_0002.csv",
+      "meta": "graph_0002_meta.json"
+    },
+    {
+      "graph_id": 3,
+      "n_vars": 7,
+      "n_edges": 2,
+      "n_v_structures": 1,
+      "csv": "graph_0003.csv",
+      "meta": "graph_0003_meta.json"
+    },
+    {
+      "graph_id": 4,
+      "n_vars": 7,
+      "n_edges": 7,
+      "n_v_structures": 2,
+      "csv": "graph_0004.csv",
+      "meta": "graph_0004_meta.json"
+    },
+    {
+      "graph_id": 5,
+      "n_vars": 8,
+      "n_edges": 6,
+      "n_v_structures": 2,
+      "csv": "graph_0005.csv",
+      "meta": "graph_0005_meta.json"
+    },
+    {
+      "graph_id": 6,
+      "n_vars": 6,
+      "n_edges": 7,
+      "n_v_structures": 0,
+      "csv": "graph_0006.csv",
+      "meta": "graph_0006_meta.json"
+    },
+    {
+      "graph_id": 7,
+      "n_vars": 6,
+      "n_edges": 2,
+      "n_v_structures": 0,
+      "csv": "graph_0007.csv",
+      "meta": "graph_0007_meta.json"
+    },
+    {
+      "graph_id": 8,
+      "n_vars": 7,
+      "n_edges": 7,
+      "n_v_structures": 4,
+      "csv": "graph_0008.csv",
+      "meta": "graph_0008_meta.json"
+    },
+    {
+      "graph_id": 9,
+      "n_vars": 3,
+      "n_edges": 2,
+      "n_v_structures": 1,
+      "csv": "graph_0009.csv",
+      "meta": "graph_0009_meta.json"
+    },
+    {
+      "graph_id": 10,
+      "n_vars": 7,
+      "n_edges": 6,
+      "n_v_structures": 3,
+      "csv": "graph_0010.csv",
+      "meta": "graph_0010_meta.json"
+    },
+    {
+      "graph_id": 11,
+      "n_vars": 7,
+      "n_edges": 7,
+      "n_v_structures": 3,
+      "csv": "graph_0011.csv",
+      "meta": "graph_0011_meta.json"
+    },
+    {
+      "graph_id": 12,
+      "n_vars": 5,
+      "n_edges": 4,
+      "n_v_structures": 1,
+      "csv": "graph_0012.csv",
+      "meta": "graph_0012_meta.json"
+    },
+    {
+      "graph_id": 13,
+      "n_vars": 6,
+      "n_edges": 5,
+      "n_v_structures": 1,
+      "csv": "graph_0013.csv",
+      "meta": "graph_0013_meta.json"
+    },
+    {
+      "graph_id": 14,
+      "n_vars": 6,
+      "n_edges": 6,
+      "n_v_structures": 1,
+      "csv": "graph_0014.csv",
+      "meta": "graph_0014_meta.json"
+    },
+    {
+      "graph_id": 15,
+      "n_vars": 3,
+      "n_edges": 0,
+      "n_v_structures": 0,
+      "csv": "graph_0015.csv",
+      "meta": "graph_0015_meta.json"
+    },
+    {
+      "graph_id": 16,
+      "n_vars": 8,
+      "n_edges": 13,
+      "n_v_structures": 5,
+      "csv": "graph_0016.csv",
+      "meta": "graph_0016_meta.json"
+    },
+    {
+      "graph_id": 17,
+      "n_vars": 3,
+      "n_edges": 1,
+      "n_v_structures": 0,
+      "csv": "graph_0017.csv",
+      "meta": "graph_0017_meta.json"
+    },
+    {
+      "graph_id": 18,
+      "n_vars": 8,
+      "n_edges": 6,
+      "n_v_structures": 1,
+      "csv": "graph_0018.csv",
+      "meta": "graph_0018_meta.json"
+    },
+    {
+      "graph_id": 19,
+      "n_vars": 8,
+      "n_edges": 6,
+      "n_v_structures": 1,
+      "csv": "graph_0019.csv",
+      "meta": "graph_0019_meta.json"
+    },
+    {
+      "graph_id": 20,
+      "n_vars": 5,
+      "n_edges": 2,
+      "n_v_structures": 1,
+      "csv": "graph_0020.csv",
+      "meta": "graph_0020_meta.json"
+    },
+    {
+      "graph_id": 21,
+      "n_vars": 6,
+      "n_edges": 11,
+      "n_v_structures": 6,
+      "csv": "graph_0021.csv",
+      "meta": "graph_0021_meta.json"
+    },
+    {
+      "graph_id": 22,
+      "n_vars": 7,
+      "n_edges": 6,
+      "n_v_structures": 2,
+      "csv": "graph_0022.csv",
+      "meta": "graph_0022_meta.json"
+    },
+    {
+      "graph_id": 23,
+      "n_vars": 4,
+      "n_edges": 2,
+      "n_v_structures": 0,
+      "csv": "graph_0023.csv",
+      "meta": "graph_0023_meta.json"
+    },
+    {
+      "graph_id": 24,
+      "n_vars": 6,
+      "n_edges": 4,
+      "n_v_structures": 1,
+      "csv": "graph_0024.csv",
+      "meta": "graph_0024_meta.json"
+    },
+    {
+      "graph_id": 25,
+      "n_vars": 6,
+      "n_edges": 4,
+      "n_v_structures": 1,
+      "csv": "graph_0025.csv",
+      "meta": "graph_0025_meta.json"
+    },
+    {
+      "graph_id": 26,
+      "n_vars": 8,
+      "n_edges": 12,
+      "n_v_structures": 8,
+      "csv": "graph_0026.csv",
+      "meta": "graph_0026_meta.json"
+    },
+    {
+      "graph_id": 27,
+      "n_vars": 5,
+      "n_edges": 1,
+      "n_v_structures": 0,
+      "csv": "graph_0027.csv",
+      "meta": "graph_0027_meta.json"
+    },
+    {
+      "graph_id": 28,
+      "n_vars": 3,
+      "n_edges": 0,
+      "n_v_structures": 0,
+      "csv": "graph_0028.csv",
+      "meta": "graph_0028_meta.json"
+    },
+    {
+      "graph_id": 29,
+      "n_vars": 4,
+      "n_edges": 3,
+      "n_v_structures": 1,
+      "csv": "graph_0029.csv",
+      "meta": "graph_0029_meta.json"
+    },
+    {
+      "graph_id": 30,
+      "n_vars": 3,
+      "n_edges": 2,
+      "n_v_structures": 1,
+      "csv": "graph_0030.csv",
+      "meta": "graph_0030_meta.json"
+    },
+    {
+      "graph_id": 31,
+      "n_vars": 7,
+      "n_edges": 10,
+      "n_v_structures": 7,
+      "csv": "graph_0031.csv",
+      "meta": "graph_0031_meta.json"
+    },
+    {
+      "graph_id": 32,
+      "n_vars": 7,
+      "n_edges": 6,
+      "n_v_structures": 0,
+      "csv": "graph_0032.csv",
+      "meta": "graph_0032_meta.json"
+    },
+    {
+      "graph_id": 33,
+      "n_vars": 5,
+      "n_edges": 3,
+      "n_v_structures": 0,
+      "csv": "graph_0033.csv",
+      "meta": "graph_0033_meta.json"
+    },
+    {
+      "graph_id": 34,
+      "n_vars": 8,
+      "n_edges": 9,
+      "n_v_structures": 5,
+      "csv": "graph_0034.csv",
+      "meta": "graph_0034_meta.json"
+    },
+    {
+      "graph_id": 35,
+      "n_vars": 8,
+      "n_edges": 7,
+      "n_v_structures": 5,
+      "csv": "graph_0035.csv",
+      "meta": "graph_0035_meta.json"
+    },
+    {
+      "graph_id": 36,
+      "n_vars": 7,
+      "n_edges": 8,
+      "n_v_structures": 1,
+      "csv": "graph_0036.csv",
+      "meta": "graph_0036_meta.json"
+    },
+    {
+      "graph_id": 37,
+      "n_vars": 3,
+      "n_edges": 1,
+      "n_v_structures": 0,
+      "csv": "graph_0037.csv",
+      "meta": "graph_0037_meta.json"
+    },
+    {
+      "graph_id": 38,
+      "n_vars": 3,
+      "n_edges": 2,
+      "n_v_structures": 1,
+      "csv": "graph_0038.csv",
+      "meta": "graph_0038_meta.json"
+    },
+    {
+      "graph_id": 39,
+      "n_vars": 6,
+      "n_edges": 4,
+      "n_v_structures": 0,
+      "csv": "graph_0039.csv",
+      "meta": "graph_0039_meta.json"
+    },
+    {
+      "graph_id": 40,
+      "n_vars": 7,
+      "n_edges": 7,
+      "n_v_structures": 2,
+      "csv": "graph_0040.csv",
+      "meta": "graph_0040_meta.json"
+    },
+    {
+      "graph_id": 41,
+      "n_vars": 3,
+      "n_edges": 1,
+      "n_v_structures": 0,
+      "csv": "graph_0041.csv",
+      "meta": "graph_0041_meta.json"
+    },
+    {
+      "graph_id": 42,
+      "n_vars": 4,
+      "n_edges": 1,
+      "n_v_structures": 0,
+      "csv": "graph_0042.csv",
+      "meta": "graph_0042_meta.json"
+    },
+    {
+      "graph_id": 43,
+      "n_vars": 6,
+      "n_edges": 7,
+      "n_v_structures": 1,
+      "csv": "graph_0043.csv",
+      "meta": "graph_0043_meta.json"
+    },
+    {
+      "graph_id": 44,
+      "n_vars": 3,
+      "n_edges": 1,
+      "n_v_structures": 0,
+      "csv": "graph_0044.csv",
+      "meta": "graph_0044_meta.json"
+    },
+    {
+      "graph_id": 45,
+      "n_vars": 5,
+      "n_edges": 2,
+      "n_v_structures": 1,
+      "csv": "graph_0045.csv",
+      "meta": "graph_0045_meta.json"
+    },
+    {
+      "graph_id": 46,
+      "n_vars": 3,
+      "n_edges": 1,
+      "n_v_structures": 0,
+      "csv": "graph_0046.csv",
+      "meta": "graph_0046_meta.json"
+    },
+    {
+      "graph_id": 47,
+      "n_vars": 5,
+      "n_edges": 3,
+      "n_v_structures": 3,
+      "csv": "graph_0047.csv",
+      "meta": "graph_0047_meta.json"
+    },
+    {
+      "graph_id": 48,
+      "n_vars": 4,
+      "n_edges": 1,
+      "n_v_structures": 0,
+      "csv": "graph_0048.csv",
+      "meta": "graph_0048_meta.json"
+    },
+    {
+      "graph_id": 49,
+      "n_vars": 5,
+      "n_edges": 2,
+      "n_v_structures": 0,
+      "csv": "graph_0049.csv",
+      "meta": "graph_0049_meta.json"
+    },
+    {
+      "graph_id": 50,
+      "n_vars": 3,
+      "n_edges": 2,
+      "n_v_structures": 1,
+      "csv": "graph_0050.csv",
+      "meta": "graph_0050_meta.json"
+    },
+    {
+      "graph_id": 51,
+      "n_vars": 3,
+      "n_edges": 0,
+      "n_v_structures": 0,
+      "csv": "graph_0051.csv",
+      "meta": "graph_0051_meta.json"
+    },
+    {
+      "graph_id": 52,
+      "n_vars": 5,
+      "n_edges": 5,
+      "n_v_structures": 1,
+      "csv": "graph_0052.csv",
+      "meta": "graph_0052_meta.json"
+    },
+    {
+      "graph_id": 53,
+      "n_vars": 7,
+      "n_edges": 5,
+      "n_v_structures": 1,
+      "csv": "graph_0053.csv",
+      "meta": "graph_0053_meta.json"
+    },
+    {
+      "graph_id": 54,
+      "n_vars": 5,
+      "n_edges": 2,
+      "n_v_structures": 1,
+      "csv": "graph_0054.csv",
+      "meta": "graph_0054_meta.json"
+    },
+    {
+      "graph_id": 55,
+      "n_vars": 5,
+      "n_edges": 4,
+      "n_v_structures": 0,
+      "csv": "graph_0055.csv",
+      "meta": "graph_0055_meta.json"
+    },
+    {
+      "graph_id": 56,
+      "n_vars": 4,
+      "n_edges": 4,
+      "n_v_structures": 2,
+      "csv": "graph_0056.csv",
+      "meta": "graph_0056_meta.json"
+    },
+    {
+      "graph_id": 57,
+      "n_vars": 5,
+      "n_edges": 0,
+      "n_v_structures": 0,
+      "csv": "graph_0057.csv",
+      "meta": "graph_0057_meta.json"
+    },
+    {
+      "graph_id": 58,
+      "n_vars": 8,
+      "n_edges": 2,
+      "n_v_structures": 1,
+      "csv": "graph_0058.csv",
+      "meta": "graph_0058_meta.json"
+    },
+    {
+      "graph_id": 59,
+      "n_vars": 4,
+      "n_edges": 1,
+      "n_v_structures": 0,
+      "csv": "graph_0059.csv",
+      "meta": "graph_0059_meta.json"
+    },
+    {
+      "graph_id": 60,
+      "n_vars": 8,
+      "n_edges": 9,
+      "n_v_structures": 6,
+      "csv": "graph_0060.csv",
+      "meta": "graph_0060_meta.json"
+    },
+    {
+      "graph_id": 61,
+      "n_vars": 5,
+      "n_edges": 5,
+      "n_v_structures": 0,
+      "csv": "graph_0061.csv",
+      "meta": "graph_0061_meta.json"
+    },
+    {
+      "graph_id": 62,
+      "n_vars": 3,
+      "n_edges": 1,
+      "n_v_structures": 0,
+      "csv": "graph_0062.csv",
+      "meta": "graph_0062_meta.json"
+    },
+    {
+      "graph_id": 63,
+      "n_vars": 6,
+      "n_edges": 3,
+      "n_v_structures": 0,
+      "csv": "graph_0063.csv",
+      "meta": "graph_0063_meta.json"
+    },
+    {
+      "graph_id": 64,
+      "n_vars": 7,
+      "n_edges": 14,
+      "n_v_structures": 5,
+      "csv": "graph_0064.csv",
+      "meta": "graph_0064_meta.json"
+    },
+    {
+      "graph_id": 65,
+      "n_vars": 3,
+      "n_edges": 0,
+      "n_v_structures": 0,
+      "csv": "graph_0065.csv",
+      "meta": "graph_0065_meta.json"
+    },
+    {
+      "graph_id": 66,
+      "n_vars": 4,
+      "n_edges": 4,
+      "n_v_structures": 2,
+      "csv": "graph_0066.csv",
+      "meta": "graph_0066_meta.json"
+    },
+    {
+      "graph_id": 67,
+      "n_vars": 8,
+      "n_edges": 6,
+      "n_v_structures": 3,
+      "csv": "graph_0067.csv",
+      "meta": "graph_0067_meta.json"
+    },
+    {
+      "graph_id": 68,
+      "n_vars": 3,
+      "n_edges": 0,
+      "n_v_structures": 0,
+      "csv": "graph_0068.csv",
+      "meta": "graph_0068_meta.json"
+    },
+    {
+      "graph_id": 69,
+      "n_vars": 6,
+      "n_edges": 6,
+      "n_v_structures": 0,
+      "csv": "graph_0069.csv",
+      "meta": "graph_0069_meta.json"
+    },
+    {
+      "graph_id": 70,
+      "n_vars": 5,
+      "n_edges": 3,
+      "n_v_structures": 0,
+      "csv": "graph_0070.csv",
+      "meta": "graph_0070_meta.json"
+    },
+    {
+      "graph_id": 71,
+      "n_vars": 5,
+      "n_edges": 5,
+      "n_v_structures": 0,
+      "csv": "graph_0071.csv",
+      "meta": "graph_0071_meta.json"
+    },
+    {
+      "graph_id": 72,
+      "n_vars": 5,
+      "n_edges": 2,
+      "n_v_structures": 0,
+      "csv": "graph_0072.csv",
+      "meta": "graph_0072_meta.json"
+    },
+    {
+      "graph_id": 73,
+      "n_vars": 7,
+      "n_edges": 7,
+      "n_v_structures": 3,
+      "csv": "graph_0073.csv",
+      "meta": "graph_0073_meta.json"
+    },
+    {
+      "graph_id": 74,
+      "n_vars": 5,
+      "n_edges": 3,
+      "n_v_structures": 1,
+      "csv": "graph_0074.csv",
+      "meta": "graph_0074_meta.json"
+    },
+    {
+      "graph_id": 75,
+      "n_vars": 5,
+      "n_edges": 5,
+      "n_v_structures": 1,
+      "csv": "graph_0075.csv",
+      "meta": "graph_0075_meta.json"
+    },
+    {
+      "graph_id": 76,
+      "n_vars": 6,
+      "n_edges": 6,
+      "n_v_structures": 2,
+      "csv": "graph_0076.csv",
+      "meta": "graph_0076_meta.json"
+    },
+    {
+      "graph_id": 77,
+      "n_vars": 7,
+      "n_edges": 8,
+      "n_v_structures": 4,
+      "csv": "graph_0077.csv",
+      "meta": "graph_0077_meta.json"
+    },
+    {
+      "graph_id": 78,
+      "n_vars": 3,
+      "n_edges": 2,
+      "n_v_structures": 1,
+      "csv": "graph_0078.csv",
+      "meta": "graph_0078_meta.json"
+    },
+    {
+      "graph_id": 79,
+      "n_vars": 4,
+      "n_edges": 0,
+      "n_v_structures": 0,
+      "csv": "graph_0079.csv",
+      "meta": "graph_0079_meta.json"
+    },
+    {
+      "graph_id": 80,
+      "n_vars": 8,
+      "n_edges": 7,
+      "n_v_structures": 3,
+      "csv": "graph_0080.csv",
+      "meta": "graph_0080_meta.json"
+    },
+    {
+      "graph_id": 81,
+      "n_vars": 7,
+      "n_edges": 9,
+      "n_v_structures": 3,
+      "csv": "graph_0081.csv",
+      "meta": "graph_0081_meta.json"
+    },
+    {
+      "graph_id": 82,
+      "n_vars": 5,
+      "n_edges": 3,
+      "n_v_structures": 3,
+      "csv": "graph_0082.csv",
+      "meta": "graph_0082_meta.json"
+    },
+    {
+      "graph_id": 83,
+      "n_vars": 6,
+      "n_edges": 7,
+      "n_v_structures": 3,
+      "csv": "graph_0083.csv",
+      "meta": "graph_0083_meta.json"
+    },
+    {
+      "graph_id": 84,
+      "n_vars": 3,
+      "n_edges": 2,
+      "n_v_structures": 0,
+      "csv": "graph_0084.csv",
+      "meta": "graph_0084_meta.json"
+    },
+    {
+      "graph_id": 85,
+      "n_vars": 7,
+      "n_edges": 5,
+      "n_v_structures": 0,
+      "csv": "graph_0085.csv",
+      "meta": "graph_0085_meta.json"
+    },
+    {
+      "graph_id": 86,
+      "n_vars": 6,
+      "n_edges": 2,
+      "n_v_structures": 1,
+      "csv": "graph_0086.csv",
+      "meta": "graph_0086_meta.json"
+    },
+    {
+      "graph_id": 87,
+      "n_vars": 3,
+      "n_edges": 2,
+      "n_v_structures": 0,
+      "csv": "graph_0087.csv",
+      "meta": "graph_0087_meta.json"
+    },
+    {
+      "graph_id": 88,
+      "n_vars": 7,
+      "n_edges": 5,
+      "n_v_structures": 1,
+      "csv": "graph_0088.csv",
+      "meta": "graph_0088_meta.json"
+    },
+    {
+      "graph_id": 89,
+      "n_vars": 8,
+      "n_edges": 6,
+      "n_v_structures": 1,
+      "csv": "graph_0089.csv",
+      "meta": "graph_0089_meta.json"
+    },
+    {
+      "graph_id": 90,
+      "n_vars": 6,
+      "n_edges": 2,
+      "n_v_structures": 0,
+      "csv": "graph_0090.csv",
+      "meta": "graph_0090_meta.json"
+    },
+    {
+      "graph_id": 91,
+      "n_vars": 5,
+      "n_edges": 2,
+      "n_v_structures": 1,
+      "csv": "graph_0091.csv",
+      "meta": "graph_0091_meta.json"
+    },
+    {
+      "graph_id": 92,
+      "n_vars": 7,
+      "n_edges": 4,
+      "n_v_structures": 3,
+      "csv": "graph_0092.csv",
+      "meta": "graph_0092_meta.json"
+    },
+    {
+      "graph_id": 93,
+      "n_vars": 5,
+      "n_edges": 1,
+      "n_v_structures": 0,
+      "csv": "graph_0093.csv",
+      "meta": "graph_0093_meta.json"
+    },
+    {
+      "graph_id": 94,
+      "n_vars": 5,
+      "n_edges": 5,
+      "n_v_structures": 0,
+      "csv": "graph_0094.csv",
+      "meta": "graph_0094_meta.json"
+    },
+    {
+      "graph_id": 95,
+      "n_vars": 4,
+      "n_edges": 0,
+      "n_v_structures": 0,
+      "csv": "graph_0095.csv",
+      "meta": "graph_0095_meta.json"
+    },
+    {
+      "graph_id": 96,
+      "n_vars": 7,
+      "n_edges": 6,
+      "n_v_structures": 2,
+      "csv": "graph_0096.csv",
+      "meta": "graph_0096_meta.json"
+    },
+    {
+      "graph_id": 97,
+      "n_vars": 4,
+      "n_edges": 3,
+      "n_v_structures": 1,
+      "csv": "graph_0097.csv",
+      "meta": "graph_0097_meta.json"
+    },
+    {
+      "graph_id": 98,
+      "n_vars": 7,
+      "n_edges": 10,
+      "n_v_structures": 5,
+      "csv": "graph_0098.csv",
+      "meta": "graph_0098_meta.json"
+    },
+    {
+      "graph_id": 99,
+      "n_vars": 8,
+      "n_edges": 8,
+      "n_v_structures": 3,
+      "csv": "graph_0099.csv",
+      "meta": "graph_0099_meta.json"
+    }
+  ]
+}

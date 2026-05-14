@@ -1,0 +1,27 @@
+{
+  "problem_id": 131,
+  "var_names": [
+    "X0",
+    "X1",
+    "X2"
+  ],
+  "edges": [
+    [
+      "X0",
+      "X1"
+    ],
+    [
+      "X1",
+      "X2"
+    ]
+  ],
+  "treatment": "X0",
+  "outcome": "X2",
+  "true_ate": -1.1677860252490313,
+  "obs_diff": -0.8392480516219349,
+  "confounding_bias": 0.32853797362709636,
+  "has_confounding": false,
+  "backdoor_set": [],
+  "n_vars": 3,
+  "csv_file": "problem_0131.csv"
+}

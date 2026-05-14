@@ -1,0 +1,43 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# Virtual environment
+venv/
+causal_venv/
+/tmp/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Dataset archives (keep small metadata, skip large binaries)
+datasets/**/*.csv.gz
+*.zip
+
+# PDF outputs
+*.pdf
+
+# Graphviz rendered images
+/tmp/*.png
+/tmp/*.svg
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Secrets / config
+.env
+*.secret

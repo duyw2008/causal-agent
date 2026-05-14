@@ -1,0 +1,41 @@
+{
+  "problem_id": 264,
+  "var_names": [
+    "X0",
+    "X1",
+    "X2",
+    "X3",
+    "X4"
+  ],
+  "edges": [
+    [
+      "X0",
+      "X1"
+    ],
+    [
+      "X0",
+      "X2"
+    ],
+    [
+      "X0",
+      "X3"
+    ],
+    [
+      "X2",
+      "X3"
+    ],
+    [
+      "X2",
+      "X4"
+    ]
+  ],
+  "treatment": "X0",
+  "outcome": "X1",
+  "true_ate": 0.8132900921501058,
+  "obs_diff": 0.6619857983445323,
+  "confounding_bias": -0.15130429380557353,
+  "has_confounding": false,
+  "backdoor_set": [],
+  "n_vars": 5,
+  "csv_file": "problem_0264.csv"
+}

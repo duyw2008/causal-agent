@@ -1,0 +1,35 @@
+{
+  "domain": "marketing",
+  "var_names": [
+    "Season",
+    "AdSpend",
+    "Sales"
+  ],
+  "var_names_cn": [
+    "季节",
+    "广告投入",
+    "销售额"
+  ],
+  "edges": [
+    [
+      "Season",
+      "AdSpend"
+    ],
+    [
+      "Season",
+      "Sales"
+    ],
+    [
+      "AdSpend",
+      "Sales"
+    ]
+  ],
+  "true_ate": 0.6,
+  "obs_diff": 1.3448587088471744,
+  "confounding_bias": 0.7448587088471744,
+  "backdoor_set": [
+    "Season"
+  ],
+  "n_samples": 1000,
+  "csv_file": "marketing.csv"
+}
