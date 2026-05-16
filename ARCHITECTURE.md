@@ -82,7 +82,8 @@ causal_agent/
 │   ├── llm_prototype.py        # LLM 集成原型（Phase 4 预览）
 │   └── physics_causal_demo.py # 物理规律 + 因果推断集成原型
 │
-├── ARCHITECTURE.md             [✅] 本文档
+├── ARCHITECTURE.md             [✅] 系统架构
+├── LEARNING.md                  [✅] 学习文档 — 从零理解全部算法与运行原理
 ├── MODELS_AND_ALGORITHMS.md    [✅] 模型与算法设计 (LaTeX 数学)
 ├── CAPABILITIES.md              [✅] 能力全景图 — 全功能速览
 ├── JEPA_CAUSAL_ARCHITECTURE.md  [✅] JEPA × Causal 合成架构分析
