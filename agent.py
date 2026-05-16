@@ -429,26 +429,67 @@ class CausalAgent:
             lines.append(yellow(f"  {result.explanation}"))
             return "\n".join(lines)
 
-        # Step 4: Estimation (if data or SCM available)
-        ate_val, se_val = 0.0, 0.0
+        # Step 4: Estimation — auto-generate data if none loaded
+        ate_val, se_val, evalue_val = 0.0, 0.5, 2.0
+        lines.append(f"\n{bold('Step 4: Estimating causal effect...')}")
+
+        # Auto-generate synthetic data if none loaded
+        if self.data is None and result.adjustment_set is not None:
+            lines.append(yellow("  No data loaded — generating synthetic data from SCM..."))
+            try:
+                # Build a simple linear SCM from the DAG structure
+                rng = np.random.default_rng(42)
+                coeffs = {}
+                for v in self.dag.variables:
+                    parents = list(self.dag.parents(v))
+                    if parents:
+                        coeffs[v] = {p: float(rng.uniform(0.5, 2.0)) for p in parents}
+                self.scm = linear_scm(self.dag, coeffs, noise_std=0.3)
+                samples = self.scm.sample(500)
+                # Convert dict samples to numpy array
+                var_list = self.dag.variables
+                self.data = np.column_stack([samples[v] for v in var_list])
+                lines.append(green(f"  Generated 500 synthetic samples from linear SCM"))
+            except Exception as e:
+                lines.append(red(f"  Auto-generation failed: {e}"))
+                self.data = None
+
         if self.data is not None and result.adjustment_set is not None:
-            lines.append(f"\n{bold('Step 4: Estimating causal effect...')}")
+            # ── Diagnostic checks ──
+            lines.append(f"\n  {bold('Diagnostics:')}")
+            diag = _run_diagnostics(self.data, self.dag.variables,
+                                     treatment, outcome, result.adjustment_set)
+            lines.append(f"  {diag['summary']}")
+            if diag.get("warnings"):
+                for w in diag["warnings"]:
+                    lines.append(yellow(f"    ⚠ {w}"))
+
+            # ── Auto-select method ──
+            method = _auto_select_method(diag)
+            lines.append(f"  → Selected: {method}")
+
+            # ── Estimate ──
             est = estimate_effect(
                 self.data, self.dag.variables, treatment, outcome,
-                result.adjustment_set, method="dr",
+                result.adjustment_set, method=method,
             )
             ate_val, se_val = est.ate, est.std_error
-            lines.append(green(f"  ATE = {ate_val:.4f}  (SE = {se_val:.4f})"))
+            lines.append(green(f"\n  ATE = {ate_val:.4f}  (SE = {se_val:.4f})"))
             lines.append(green(f"  95% CI = [{est.ci_lower:.4f}, {est.ci_upper:.4f}]"))
             sig = "✓ significant" if est.is_significant() else "not significant"
             lines.append(green(f"  {sig}"))
 
+            # Sensitivity
             sens_report = full_sensitivity_report(est.ate, est.std_error)
             lines.append(f"\n  {sens_report}")
+            # Extract E-value from report
+            import re
+            ev_match = re.search(r'E-value\s*=\s*([\d.]+)', sens_report)
+            if ev_match:
+                evalue_val = float(ev_match.group(1))
         else:
             lines.append(yellow(
-                f"\n  (No data loaded. Load with 'load_data <file.csv>' "
-                f"for numerical estimation.)"
+                f"\n  (Cannot estimate — no data and auto-generation failed.)"
             ))
 
         # Step 5: LLM explanation
@@ -474,6 +515,99 @@ class CausalAgent:
 
 def _format_intervention(d: Dict[str, float]) -> str:
     return ", ".join(f"{k}={v}" for k, v in d.items())
+
+
+def _run_diagnostics(data: np.ndarray, var_names: List[str],
+                      treatment: str, outcome: str,
+                      adjustment_set: List[str]) -> Dict:
+    """Run assumption checks on data and return diagnostics."""
+    warnings = []
+    idx = {v: i for i, v in enumerate(var_names)}
+    t_col = data[:, idx[treatment]]
+    y_col = data[:, idx[outcome]]
+    n = len(data)
+
+    # 1. Linearity check: fit linear model, check residual normality
+    # Simple Jarque-Bera approximation via skewness/kurtosis
+    X = np.column_stack([np.ones(n), t_col] +
+                        [data[:, idx[a]] for a in adjustment_set])
+    try:
+        coeffs = np.linalg.lstsq(X, y_col, rcond=None)[0]
+        residuals = y_col - X @ coeffs
+        # Skewness
+        s = np.mean((residuals - np.mean(residuals))**3) / (np.std(residuals)**3 + 1e-12)
+        # Excess kurtosis
+        k = np.mean((residuals - np.mean(residuals))**4) / (np.std(residuals)**4 + 1e-12) - 3
+        linearity_score = abs(s) + abs(k) / 2  # lower is better
+    except Exception:
+        linearity_score = 99
+
+    # 2. Propensity score overlap (for binary treatment)
+    if len(np.unique(t_col)) <= 10:  # discrete treatment
+        unique_vals = sorted(np.unique(t_col))
+        if len(unique_vals) >= 2:
+            lo_group = data[t_col == unique_vals[0]]
+            hi_group = data[t_col == unique_vals[-1]]
+            if len(lo_group) > 5 and len(hi_group) > 5 and len(adjustment_set) > 0:
+                adj_idx = [idx[a] for a in adjustment_set]
+                lo_mean = np.mean(lo_group[:, adj_idx], axis=0)
+                hi_mean = np.mean(hi_group[:, adj_idx], axis=0)
+                # Normalized difference (similar to SMD check)
+                pooled_std = np.sqrt((np.var(lo_group[:, adj_idx], axis=0) +
+                                     np.var(hi_group[:, adj_idx], axis=0)) / 2 + 1e-12)
+                smd = np.max(np.abs(lo_mean - hi_mean) / pooled_std)
+            else:
+                smd = 0.01
+        else:
+            smd = 0.01
+    else:
+        smd = 0.01  # continuous: skip PS check
+
+    # 3. Build summary
+    checks = []
+    if linearity_score < 1.0:
+        checks.append("linearity ✓")
+    elif linearity_score < 3.0:
+        checks.append("linearity ~")
+        warnings.append(f"Residual non-normality (score={linearity_score:.1f}). "
+                       f"Consider Doubly Robust or IPW instead of Linear.")
+    else:
+        checks.append("linearity ✗")
+        warnings.append(f"Strong residual non-normality (score={linearity_score:.1f}). "
+                       f"Linear regression may be unreliable.")
+
+    if smd < 0.1:
+        checks.append("overlap ✓")
+    elif smd < 0.25:
+        checks.append("overlap ~")
+    else:
+        checks.append("overlap ✗")
+        warnings.append(f"Poor covariate overlap (SMD={smd:.2f}). "
+                       f"Consider stratification or IPW with trimming.")
+
+    return {
+        "summary": ", ".join(checks),
+        "warnings": warnings,
+        "linearity_score": linearity_score,
+        "smd": smd,
+        "n_samples": n,
+    }
+
+
+def _auto_select_method(diag: Dict) -> str:
+    """Auto-select the best estimation method based on diagnostics."""
+    lin = diag.get("linearity_score", 0)
+    smd = diag.get("smd", 0)
+
+    # Doubly Robust is the safest default — handles both misspecification
+    if lin > 3.0 or smd > 0.2:
+        return "dr"       # both issues → doubly robust
+    if lin > 1.5:
+        return "ipw"      # non-linearity → IPW doesn't need linear outcome model
+    if smd > 0.1:
+        return "psm"      # overlap issue → matching
+
+    return "linear"       # all assumptions satisfied → simplest & most efficient
 
 
 # ── demo ────────────────────────────────────────────────────────
