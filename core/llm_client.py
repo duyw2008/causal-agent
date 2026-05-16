@@ -23,10 +23,25 @@ class DeepSeekClient:
     """Minimal DeepSeek API client using urllib (no external deps)."""
 
     BASE_URL = "https://api.deepseek.com/v1"
+    CONFIG_PATH = os.path.expanduser("~/.hermes/causal_config.json")
 
     def __init__(self, api_key: Optional[str] = None, model: str = "deepseek-chat"):
         self.api_key = api_key or os.environ.get("DEEPSEEK_API_KEY", "")
         self.model = model
+        # Fallback to config file
+        if not self.api_key:
+            self.api_key = self._load_key_from_config()
+
+    def _load_key_from_config(self) -> str:
+        """Load API key from config file."""
+        try:
+            if os.path.exists(self.CONFIG_PATH):
+                with open(self.CONFIG_PATH) as f:
+                    cfg = json.load(f)
+                return cfg.get("DEEPSEEK_API_KEY", "")
+        except Exception:
+            pass
+        return ""
 
     def chat(self, messages: list, temperature: float = 0.1,
              max_tokens: int = 2048) -> str:
