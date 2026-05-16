@@ -1,7 +1,7 @@
-# Causal Agent — Linux 运行指南
+# Causal Agent — 运行指南
 
 > 最后更新: 2026-05-14
-> 版本: v0.9.2
+> 版本: v0.9.6
 > Python 版本: ≥ 3.10
 
 ---
@@ -12,488 +12,369 @@
 
 ```bash
 # Arch Linux
-sudo pacman -S python python-numpy python-scipy nodejs npm
+sudo pacman -S python python-numpy
 
 # Ubuntu / Debian
-sudo apt install python3 python3-pip python3-venv nodejs npm
-
-# CentOS / RHEL
-sudo dnf install python3 python3-pip nodejs npm
+sudo apt install python3 python3-pip python3-venv
 ```
 
-### 1.2 创建虚拟环境
+### 1.2 虚拟环境
 
 ```bash
-# 创建 venv
 python3 -m venv ~/causal_venv
-
-# 激活
 source ~/causal_venv/bin/activate
-
-# 安装 Python 依赖
-pip install numpy scipy
-
-# 验证
-python -c "import numpy; import scipy; print('OK')"
-# → OK
-```
-
-### 1.3 安装 Node.js 依赖 (PPT 生成用，可选)
-
-```bash
-npm install -g pptxgenjs
-```
-
-### 1.4 获取代码
-
-```bash
-# 项目目录
-cd /home/duyw/causal_agent
-```
-
-**项目已在 `/home/duyw/causal_agent/`，无需额外克隆。**
-
----
-
-## 二、快速启动
-
-### 2.1 交互模式
-
-```bash
-cd /home/duyw/causal_agent
-~/causal_venv/bin/python agent.py
-```
-
-```
-============================================================
-  Causal Inference Agent
-  Type 'help' for commands, 'quit' to exit
-============================================================
-
-> help
-
-Commands:
-  load <description>   — describe a causal scenario
-  template <name>      — load a pre-built template
-  discover <file.csv>  — learn causal structure from data
-  effect <X> <Y>       — identify effect of X on Y
-  whatif <X=val> <Y>   — predict Y under intervention
-  whatif <X=val> <Y> given <obs> — counterfactual
-  explain [concept]    — explain a causal concept
-  model                — show current DAG
-  demo                 — run demonstrations
-  quit                 — exit
-
-Templates: smoking, simpson, education, frontdoor, mbias
-```
-
-### 2.2 运行演示
-
-```bash
-cd /home/duyw/causal_agent
-~/causal_venv/bin/python demos/run_all.py
-```
-
-一次性运行 5 个核心 demo，验证全功能：
-1. Simpson's Paradox — 识别→估计→敏感性分析
-2. Causal Discovery — PC/FCI/Bootstrap 因果发现
-3. Counterfactual — 反事实推理（吸烟→癌症）
-4. Modern Methods — DML + CATE 9 种估计器对比
-5. Domain Transfer — 8 领域 ATE 恢复
-
-```bash
-# LLM 集成原型
-~/causal_venv/bin/python demos/llm_prototype.py
-
-# 初学者交互教程
-~/causal_venv/bin/python demos/tutorial.py
-
-# 物理规律 + 因果推断原型
-~/causal_venv/bin/python demos/physics_causal_demo.py
-```
-
-### 2.3 单次查询
-
-```bash
-cd /home/duyw/causal_agent
-~/causal_venv/bin/python -c "
-import sys; sys.path.insert(0, '.')
-from agent import CausalAgent
-agent = CausalAgent()
-print(agent.load_scenario('simpson'))
-print(agent.ask_effect('D', 'R'))
-"
+pip install numpy
 ```
 
 ---
 
-## 三、交互命令详解
+## 二、两种运行模式
 
-### 3.1 加载场景
+| 模式 | 入口 | 适用场景 | 数据要求 |
+|------|------|---------|---------|
+| **LLM 模式** | `ask <自然语言问题>` | 快速探索、未知场景、非技术用户 | 无需准备 — Agent 自动生成合成数据 |
+| **无 LLM 模式** | `load` / `discover` / `effect` 命令 | 精确控制、已有数据、算法研究 | 需 CSV 文件或模板名称 |
+
+---
+
+## 三、LLM 模式 — 自然语言直接提问
+
+### 3.1 配置 API Key
+
+```bash
+# 方式一：环境变量（临时）
+export DEEPSEEK_API_KEY="sk-你的key"
+
+# 方式二：配置文件（永久，推荐）
+mkdir -p ~/.hermes
+echo '{"DEEPSEEK_API_KEY":"sk-你的key"}' > ~/.hermes/causal_config.json
+chmod 600 ~/.hermes/causal_config.json
+```
+
+配置文件路径为 `~/.hermes/causal_config.json`，Agent 会自动读取，无需每次设置环境变量。
+
+### 3.2 使用方式
+
+```bash
+cd /home/duyw/causal_agent
+python agent.py
+```
+
+进入交互模式后：
 
 ```
-# 自然语言描述
-> load variables: Education, Income, SES. SES causes Education.
-         SES causes Income. Education causes Income.
+> ask 吸烟会导致肺癌吗
 
-# 加载预置模板
-> template simpson    # Simpson's Paradox
-> template smoking    # Smoking → Tar → Lung Cancer
-> template frontdoor  # Front-door adjustment
-> template mbias      # M-bias (collider)
-> template education  # 教育-收入
+  Agent 自动执行 5 步：
+  Step 1: LLM 从自然语言提取因果图（变量、边、处理、结局、混杂因子）
+  Step 2: 构建 CausalDAG
+  Step 3: 识别因果效应（back-door / front-door / do-calculus）
+  Step 4: 生成合成数据 → 诊断假设 → 自动选择估计方法 → 估计 ATE
+  Step 5: LLM 生成中文自然语言解读
 ```
 
-### 3.2 因果效应识别 + 估计
+### 3.3 支持的提问类型
 
 ```
-> effect Treatment Outcome
+"吸烟会导致肺癌吗"
+"教育年限对收入的影响有多大，控制家庭背景"
+"锻炼是否降低心脏病风险"
+"广告投放对销售额的因果效应，考虑季节因素"
+"最低工资政策对就业率的影响"
+```
 
-# Phase 1 新功能: 加载数据后进行数值估计
+### 3.4 LLM 模式下 Agent 的自主能力
+
+| 能力 | 说明 |
+|------|------|
+| 自动变量提取 | 从自然语言中识别因果变量和方向 |
+| 自动混杂因子推断 | 基于领域知识推断可能的混淆变量 |
+| 自动数据生成 | 无数据时从因果图构建线性 SCM 并采样 500 条 |
+| 自动假设诊断 | 检查残差正态性、协变量重叠性 |
+| 自动方法选择 | linear → PSM → IPW → DR，根据诊断自动切换 |
+| 自然语言解释 | 中文输出 ATE、CI、E-value、稳健性、行动建议 |
+
+### 3.5 示例输出
+
+```
+> ask 吸烟会导致肺癌吗
+
+Query: 吸烟会导致肺癌吗
+──────────────────────────────────────────────────
+Step 1: Extracting causal structure...
+  Variables: Smoking, LungCancer, Genetics, AirPollution, Age
+  Edges: Smoking→LungCancer, Genetics→Smoking, Genetics→LungCancer, ...
+  Treatment: Smoking, Outcome: LungCancer
+  Confounders: Genetics, Age
+
+Step 2: Building causal model...
+  DAG built: Causal DAG: 5 variables, 6 edges
+
+Step 3: Identifying causal effect...
+  Method: Back-door adjustment
+  Adjustment set: {Age, Genetics}
+  Identifiable: True
+
+Step 4: Estimating causal effect...
+  No data loaded — generating synthetic data from SCM...
+  Generated 500 synthetic samples from linear SCM
+
+  Diagnostics:
+  linearity ✓, overlap ✓
+  → Selected: linear
+
+  ATE = 1.5379  (SE = 0.0933)
+  95% CI = [1.3552, 1.7207]
+  ✓ significant
+
+  E-value: 8.78  (Highly robust)
+
+Step 5: Natural language explanation...
+  吸烟确实会显著增加患肺癌的风险...
+  [详细中文解读：效应大小、置信区间含义、混杂控制、稳健性评估、行动建议]
+```
+
+---
+
+## 四、无 LLM 模式 — 手动操作
+
+适用于：已有结构化数据、需要精确控制分析流程、离线环境。
+
+### 4.1 方式一：使用预置模板
+
+Agent 内置 5 个预置因果场景模板，无需 LLM，无需数据。
+
+```bash
+> load simpson        # Simpson's Paradox (新药→康复，混淆：性别)
+> load smoking        # 吸烟与肺癌（含遗传混杂）
+> load education      # 教育对收入的影响
+> load frontdoor      # 前门调整示例
+> load mbias          # M-bias 对撞结构
+
+# 加载后立即分析
+> effect D R          # 估计 D 对 R 的因果效应
+> whatif D=0 R        # 干预推演：如果 D=0，R 会是多少？
+> dag show            # ASCII 图展示 DAG
+> sensitivity D R     # 敏感性分析
+```
+
+### 4.2 方式二：自由文本构建因果模型
+
+无需 LLM，用规则解析器从结构化描述中提取因果图：
+
+```bash
+> load variables: X, Y, Z; edges: X→Z, Y→Z
+> load X causes M; M causes Y; X also causes Y
+> load treatment is Education; outcome is Income; confounders: FamilySES, Ability
+```
+
+### 4.3 方式三：从数据中发现因果结构
+
+**Step 1: 准备 CSV 数据文件**
+
+```csv
+# example: simpson_data.csv
+Gender,Drug,Recovery
+F,1,1
+M,1,1
+F,0,1
+M,0,0
+F,1,1
+...
+```
+
+要求：
+- 第一行为表头（变量名）
+- 逗号分隔
+- 数值型数据
+- 建议 500+ 行样本
+
+**Step 2: 加载数据并发现因果结构**
+
+```bash
 > load_data /path/to/data.csv
+  Loaded 1000 samples, 4 variables: Gender, Drug, Recovery, Age
+
+# PC 算法（快，假设无隐变量）
+> discover /path/to/data.csv pc
+
+# FCI 算法（允许隐变量，检测混淆边）
+> discover /path/to/data.csv fci
+
+# GES 算法（基于 BIC 评分，含 CI 剪枝）
+> discover /path/to/data.csv ges
+
+# 带自举置信度
+> discover /path/to/data.csv pc --bootstrap=100
+
+# 指定 α 水平（默认 0.05）
+> discover /path/to/data.csv pc --alpha=0.01
+```
+
+**Step 3: 效应估计**
+
+```bash
+# 自动选择方法
+> effect Drug Recovery
+
+# 指定方法
+> effect Drug Recovery linear    # 线性回归
+> effect Drug Recovery dr        # 双重鲁棒
+> effect Drug Recovery ipw       # 逆概率加权
+> effect Drug Recovery psm       # 倾向得分匹配
+> effect Drug Recovery dml       # 双重机器学习
+```
+
+**Step 4: 敏感性分析**
+
+```bash
+> sensitivity Drug Recovery
+```
+
+### 4.4 数据准备速查表
+
+| 数据类型 | 格式 | 最低样本 | 示例 |
+|---------|------|:---:|------|
+| 因果发现 | CSV, 首行表头, 数值列 | 500 | `discover data.csv pc` |
+| 效应估计 | CSV + 已加载 DAG | 300 | `effect X Y linear` |
+| 反事实推理 | SCM 参数 + 观测值 | N/A | `whatif X=0 Y given X=1,Y=2` |
+| 时间序列因果 | CSV, 多变量, 等间距 | 200 | `granger_test(data, vars)` |
+
+### 4.5 完整无 LLM 工作流示例
+
+```bash
+cd /home/duyw/causal_agent
+python agent.py
+
+# 1. 加载预置场景
+> load simpson
+  Loaded template: simpsons_paradox
+
+# 2. 查看因果图
+> dag show
+  ┌───┐
+  │ G │────→ D ────→ R
+  └───┘         ↗
+    └───────────┘
+  G=Gender, D=Drug, R=Recovery
+
+# 3. 识别因果效应
 > effect D R
-  Query: P(R | do(D))
   Method: Back-door adjustment
   Adjustment set: {G}
+  
+  Causal Effect Estimate:
+  ATE = 0.3124  (SE = 0.0456)
+  95% CI = [0.2231, 0.4017]
+  ✓ significant
 
-Causal Effect Estimate:
-  ATE = -1.1112  (SE = 0.0227)
-  95% CI = [-1.1556, -1.0667]
-  Statistically significant ✓
+# 4. 敏感性分析
+> sensitivity D R
+  E-value: 5.2  (Highly robust)
 
-SENSITIVITY ANALYSIS:
-  Rosenbaum Bounds:
-    Results are robust to hidden bias up to Γ = 5.0.
-  E-value:
-    Highly robust (E-value = 5.5).
-
-# 选择估计方法
-> effect D R linear    # 线性回归
-> effect D R psm       # 倾向得分匹配
-> effect D R ipw       # 逆概率加权
-> effect D R dr        # 双重鲁棒
-> effect D R stratified # 分层
-> effect D R auto      # 自动选择 (默认)
-```
-
-### 3.3 DAG 可视化
-
-```
-> dag show          # ASCII 艺术画
-> dag save png      # 导出 PNG (需 graphviz)
-> dag save svg      # 导出 SVG
-> dag save dot      # 导出 DOT 源文件
-```
-
-示例:
-> effect D R
-  Query: P(R | do(D))
-  D is an ancestor of R — causal path exists
-  Back-door adjustment set: {G}
-  → Adjust for G to de-confound
-
-> effect Education Income
-  (自动计算调整集并给出可估计表达式)
-```
-
-### 3.3 干预预测 (what-if)
-
-```
-# 群体层面 (不需要观测数据)
-> whatif X=1.0 Y
-  Intervention: do(X=1.0)
-  → E[Y] = 2.3456
-
-# 反事实层面 (需要观测数据)
-> whatif Smoking=0 Cancer given Smoking=3,Tar=2.5,Cancer=4,Gene=2
-  Counterfactual:
-  Observed: {Smoking:3, Tar:2.5, Cancer:4, Gene:2}
-  Intervention: do(Smoking=0)
-  → Cancer = 2.2   (如果这个人不吸烟, 预期患癌风险降低)
-```
-
-### 3.4 因果发现 (从数据学习)
-
-```bash
-# 先准备数据
-cd /home/duyw/causal_agent
-~/causal_venv/bin/python -c "
-from core.discovery import generate_linear_data
-from core.graph import CausalDAG
-import numpy as np
-
-dag = CausalDAG(['G','D','R'], [('G','D'),('G','R'),('D','R')])
-data = generate_linear_data(dag, n_samples=3000, seed=42)
-np.savetxt('/tmp/simpson_data.csv', data, delimiter=',',
-           header='G,D,R', comments='')
-print('Data saved to /tmp/simpson_data.csv')
-"
-```
-
-```bash
-# 在 agent 中使用
-> discover /tmp/simpson_data.csv pc
-  Loaded 3000 samples, 3 variables
-  Running PC algorithm (alpha=0.05)...
-  Removed G—R | {D}
-  Discovered: CausalDAG(G→D, D→R)
-
-> discover /tmp/simpson_data.csv ges
-  (使用 GES 算法)
-```
-
-### 3.5 概念解释
-
-```
-> explain backdoor
-> explain dseparation
-> explain do
-> explain scm
-> explain frontdoor
+# 5. 反事实
+> whatif D=0 R given G=1,D=1,R=1
+  Counterfactual: if D had been 0 instead of 1, R would be 0.68
 ```
 
 ---
 
-## 四、运行独立模块
+## 五、从 CSV 数据构建因果模型的完整流程
 
-### 4.1 DAG + d-separation 测试
+如果你有一份 CSV 数据但不知道因果结构，走这条路径：
+
+```
+CSV 数据
+  │
+  ├─→ discover data.csv pc     (自动发现因果结构)
+  │      ↓
+  │   CausalDAG
+  │      ↓
+  ├─→ effect X Y               (识别 + 估计)
+  │      ↓
+  │   ATE ± CI + 敏感性
+  │
+  └─→ whatif X=0 Y             (干预推演)
+```
+
+---
+
+## 六、运行演示
 
 ```bash
 cd /home/duyw/causal_agent
-~/causal_venv/bin/python core/graph.py
-```
 
-```
-All DAG tests passed ✓
-Causal DAG: 3 variables, 2 edges
-  X:  (exogenous)  children: [M]
-  M:  parents: [X]  children: [Y]
-  Y:  parents: [M]
-```
+# 全功能验证（5 个 demo）
+python demos/run_all.py
 
-### 4.2 SCM + 干预 + 反事实测试
+# 初学者教程（7 步循序渐进）
+python demos/tutorial.py
 
-```bash
-cd /home/duyw/causal_agent
-~/causal_venv/bin/python core/scm.py
-```
+# 物理因果推断
+python demos/physics_causal_demo.py
 
-### 4.3 因果发现测试
+# 最小作用量原理
+python demos/least_action_demo.py
 
-```bash
-cd /home/duyw/causal_agent/core
-~/causal_venv/bin/python discovery.py
-```
-
-输出包含 PC 和 GES 在 Chain / Fork / Collider / Simpson 四个结构上的结果。
-
-> **GES Phase 3**: 自 v0.9.1 起，GES 在 Phase 2 之后增加条件独立性(CI)剪枝阶段，自动消除 collider 结构 (X→Z←Y) 中因有限样本偶然相关产生的多余边 X→Y。
-
-### 4.4 识别 (back-door/front-door/IV) 测试
-
-```bash
-cd /home/duyw/causal_agent
-~/causal_venv/bin/python -c "
-import sys; sys.path.insert(0, '.')
-from core.graph import CausalDAG
-from core.identification import identify_effect
-
-dag = CausalDAG(['G','D','R'], [('G','D'),('G','R'),('D','R')])
-result = identify_effect(dag, 'D', 'R')
-print(result)
+# 运行全部测试（52 个）
+python -c "
+import sys, os, importlib
+sys.path.insert(0,'.')
+os.chdir('/home/duyw/causal_agent')
+modules = ['tests.test_graph','tests.test_identification','tests.test_scm',
+           'tests.test_discovery','tests.test_estimation',
+           'tests.test_sensitivity_physics','tests.test_ts_parser']
+for m in modules:
+    mod = importlib.import_module(m)
+    for name in dir(mod):
+        obj = getattr(mod,name)
+        if isinstance(obj,type) and name.startswith('Test'):
+            if hasattr(obj,'setup_class'): obj.setup_class()
+            for mn in dir(obj):
+                if mn.startswith('test_'):
+                    inst=obj()
+                    if hasattr(inst,'setUp'): inst.setUp()
+                    getattr(inst,mn)()
+print('52/52 passing')
 "
 ```
 
-### 4.5 自然语言解析测试
+---
 
-```bash
-cd /home/duyw/causal_agent
-~/causal_venv/bin/python nlp/parser.py
-```
+## 七、命令速查
 
-### 4.6 效应估计测试
-
-```bash
-cd /home/duyw/causal_agent
-~/causal_venv/bin/python core/estimation.py
-```
-
-### 4.7 敏感性分析测试
-
-```bash
-cd /home/duyw/causal_agent
-~/causal_venv/bin/python core/sensitivity.py
-```
-
-### 4.8 DAG 可视化测试
-
-```bash
-cd /home/duyw/causal_agent
-~/causal_venv/bin/python core/visualization.py
-```
-
-### 4.6 飞机消失预测 (Demo)
-
-```bash
-cd /home/duyw/causal_agent
-~/causal_venv/bin/python demos/aircraft_disappearance.py
-```
-
-输出:
-- 5000 架次轨迹生成
-- softmax 模型训练 (97.9% 准确率)
-- 因果分析报告 (Weather-stratified probabilities)
-
-### 4.7 生成训练数据集
-
-```bash
-cd /home/duyw/causal_agent
-~/causal_venv/bin/python generate_all_datasets.py
-```
-
-生成 955 个文件到 `datasets/`，包含全部五类训练数据：
-
-| 类型 | 路径 | 数量 |
+| 命令 | 说明 | 示例 |
 |------|------|------|
-| 结构学习 | `datasets/type1_structure_learning/` | 100 图 × CSV + JSON |
-| 效应估计 | `datasets/type2_effect_estimation/` | 300 问题 × CSV + JSON |
-| 干预推理 | `datasets/type3_interventional/` | 150 问题 |
-| 反事实 | `datasets/type4_counterfactual/` | 96 三元组 (JSONL) |
-| 领域迁移 | `datasets/type5_domain_transfer/` | 8 领域 × CSV + JSON |
+| `ask <问题>` | 自然语言提问（需 LLM） | `ask 吸烟会导致肺癌吗` |
+| `load <描述>` | 加载场景/模板 | `load simpson` |
+| `discover <csv> [pc\|fci\|ges]` | 从数据发现因果结构 | `discover data.csv pc` |
+| `effect <X> <Y> [方法]` | 估计因果效应 | `effect D R dr` |
+| `whatif <X=v> <Y>` | 干预推演 | `whatif D=0 R` |
+| `whatif ... given ...` | 反事实推理 | `whatif D=0 R given D=1,R=1` |
+| `sensitivity <X> <Y>` | 敏感性分析 | `sensitivity D R` |
+| `dag show` | ASCII 图展示 DAG | |
+| `dag save png /tmp/dag.png` | 导出 DAG 图 | |
+| `model` | 查看当前模型 | |
+| `explain <概念>` | 解释因果概念 | `explain backdoor` |
+| `demo` | 运行演示 | |
+| `help` | 显示帮助 | |
+| `quit` | 退出 | |
 
 ---
 
-## 五、Python API 使用
+## 八、常见问题
 
-### 5.1 导入核心模块
-
-```python
-import sys
-sys.path.insert(0, '/home/duyw/causal_agent')
-
-from core.graph import CausalDAG
-from core.identification import identify_effect
-from core.scm import linear_scm
-from core.discovery import pc_algorithm, generate_linear_data
-```
-
-### 5.2 端到端示例
-
-```python
-import sys
-sys.path.insert(0, '/home/duyw/causal_agent')
-import numpy as np
-from core.graph import CausalDAG
-from core.identification import identify_effect
-from core.discovery import generate_linear_data, pc_algorithm
-
-# 1. 生成数据 (已知真实因果结构)
-true_dag = CausalDAG(['G','D','R'], [('G','D'),('G','R'),('D','R')])
-data = generate_linear_data(true_dag, n_samples=2000, seed=42)
-
-# 2. 因果发现 (从数据恢复结构)
-learned_dag = pc_algorithm(data, ['G','D','R'], alpha=0.01)
-print(f"True: {true_dag}")
-print(f"Learned: {learned_dag}")
-
-# 3. 效应识别
-result = identify_effect(learned_dag, 'D', 'R')
-print(f"\nEffect of D on R:")
-print(f"  Identifiable: {result.identifiable}")
-print(f"  Method: {result.method}")
-print(f"  Adjustment set: {result.adjustment_set}")
-```
-
-### 5.3 使用训练数据
-
-```python
-import json
-import numpy as np
-
-# 加载 Type 2 问题
-with open("datasets/type2_effect_estimation/index.json") as f:
-    index = json.load(f)
-
-problem = index["problems"][0]
-pid = problem["problem_id"]
-
-# 加载数据
-data = np.genfromtxt(
-    f"datasets/type2_effect_estimation/problem_{pid:04d}.csv",
-    delimiter=',', skip_header=1
-)
-
-# 加载元数据
-with open(f"datasets/type2_effect_estimation/problem_{pid:04d}_meta.json") as f:
-    meta = json.load(f)
-
-print(f"Treatment: {meta['treatment']}")
-print(f"Outcome: {meta['outcome']}")
-print(f"True ATE: {meta['true_ate']:.4f}")
-print(f"Obs diff: {meta['obs_diff']:.4f}")
-print(f"Confounding bias: {meta['confounding_bias']:.4f}")
-```
-
----
-
-## 六、常见问题
-
-### Q: ModuleNotFoundError: No module named 'numpy'
-
+### Q: "LLM extraction failed: DEEPSEEK_API_KEY not set"
+A: API key 未配置。创建 `~/.hermes/causal_config.json`：
 ```bash
-~/causal_venv/bin/pip install numpy scipy
+echo '{"DEEPSEEK_API_KEY":"sk-你的key"}' > ~/.hermes/causal_config.json
 ```
 
-### Q: ImportError: attempted relative import
+### Q: "No scenario loaded"
+A: 先 `load simpson` 或 `ask 你的问题` 加载因果模型。
 
-```bash
-# 确保从项目根目录运行
-cd /home/duyw/causal_agent
+### Q: 数据格式要求
+A: CSV，首行表头，数值列，建议 ≥300 行。PC 算法 ≥200 行，GES ≥500 行。
 
-# 或在 Python 代码中添加
-import sys
-sys.path.insert(0, '/home/duyw/causal_agent')
-```
-
-### Q: PC 算法运行很慢
-
-```bash
-# 减小条件集大小上限 (默认无限制)
-# 在代码中设置 max_cond_size=3
-dag = pc_algorithm(data, var_names, alpha=0.05, max_cond_size=3)
-```
-
-### Q: 虚拟环境路径不同
-
-```bash
-# 使用你创建的 venv 路径, 不限于 ~/causal_venv
-/path/to/your/venv/bin/python agent.py
-```
-
----
-
-## 七、文件索引
-
-| 文件 | 用途 | 运行方式 |
-|------|------|---------|
-| `agent.py` | 交互式智能体 | `python agent.py` |
-| `core/graph.py` | DAG + d-separation | `python core/graph.py` |
-| `core/scm.py` | 结构因果模型 | `python core/scm.py` |
-| `core/identification.py` | 因果效应识别 | 作为模块导入 |
-| `core/discovery.py` | PC / GES 算法 | `python core/discovery.py` |
-| `core/estimation.py` | 五类 ATE 估计器 | `python core/estimation.py` |
-| `core/sensitivity.py` | 敏感性分析 | `python core/sensitivity.py` |
-| `core/visualization.py` | DAG 可视化 | `python core/visualization.py` |
-| `nlp/parser.py` | NL 解析器 | `python nlp/parser.py` |
-| `demos/aircraft_disappearance.py` | 飞机消失预测 | `python demos/aircraft_disappearance.py` |
-| `demos/tutorial.py` | 初学者交互教程 | `python demos/tutorial.py` |
-| `training_data.py` | 训练数据生成器 API | 作为模块导入 |
-| `demos/run_all.py` | 全功能验证套件 | `python demos/run_all.py` |
-| `demos/llm_prototype.py` | LLM 集成原型 | `python demos/llm_prototype.py` |
-| `demos/physics_causal_demo.py` | 物理规律集成 | `python demos/physics_causal_demo.py` |
-| `core/physics.py` | 物理因果引擎 | `python core/physics.py` |
-| `PHYSICS_EXTENSION_GUIDE.md` | 物理规律扩展指南 | 阅读 |
-| `ARCHITECTURE.md` | 系统架构文档 | 阅读 |
-| `DATA_REQUIREMENTS.md` | 数据需求方案 | 阅读 |
-| `ROADMAP.md` | 六阶段路线图 | 阅读 |
-| `datasets/README.md` | 数据集文档 | 阅读 |
+### Q: 如何获取 DeepSeek API Key
+A: 访问 https://platform.deepseek.com 注册并获取。
