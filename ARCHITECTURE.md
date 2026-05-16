@@ -1,7 +1,8 @@
 # Causal Agent — 系统架构文档
 
 > 最后更新: 2026-05-14
-> 状态: v0.9.4 — Phase 4 完成 + P1 修复 (do-calculus 已接入管线)
+> 状态: v0.9.6 — Phase 4 完成 + LLM 集成 (DeepSeek) + 自主诊断与自动方法选择
+> 测试: 52/52 passing
 
 ---
 
@@ -50,15 +51,17 @@ causal_agent/
 │
 ├── core/
 │   ├── graph.py                [✅] CausalDAG + d-separation
-│   ├── identification.py       [✅] back-door / front-door / IV 识别
+│   ├── identification.py       [✅] back-door / front-door / IV / do-calculus
 │   ├── scm.py                  [✅] SCM + do()干预 + 反事实
-│   ├── discovery.py            [✅] PC 算法 + GES 算法
+│   ├── discovery.py            [✅] PC / FCI / GES 算法
 │   ├── estimation.py           [✅] 五类 ATE 估计器 (Phase 1)
 │   ├── sensitivity.py          [✅] Rosenbaum + E-value (Phase 1)
-│   └── visualization.py        [✅] ASCII/DOT/Mermaid/PNG (Phase 1)
-│   └── modern.py                [✅] DML + CATE + do-why (Phase 3)
-│   └── physics.py               [✅] 物理因果引擎 (Phase 4)
-│   └── ts_discovery.py           [✅] 时间序列因果发现 (Phase 4)
+│   ├── visualization.py        [✅] ASCII/DOT/Mermaid/PNG (Phase 1)
+│   ├── modern.py               [✅] DML + CATE + do-why (Phase 3)
+│   ├── physics.py              [✅] 物理因果引擎 (Phase 4)
+│   ├── ts_discovery.py         [✅] 时间序列因果发现 (Phase 4)
+│   ├── mediation.py            [✅] 因果中介分析 NDE/NIE/CDE (v0.9.3)
+│   └── llm_client.py           [✅] DeepSeek LLM 客户端 (v0.9.5)
 │
 ├── nlp/
 │   └── parser.py               [✅] NL → CausalDAG (规则 + 模板)

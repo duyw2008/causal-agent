@@ -1,6 +1,6 @@
 # Causal Agent 能力全景图
 
-> 版本: v0.9.4 (2026-05-14)
+> 版本: v0.9.6 (2026-05-14)
 > 路径: `/home/duyw/causal_agent/`
 > 测试: 52/52 passing
 
@@ -18,9 +18,11 @@
 | **干预推断** | do() 算子、干预分布采样 | ✅ 完整 |
 | **敏感性分析** | Rosenbaum bounds, E-value | ✅ 完整 |
 | **物理规律约束** | 14 条物理定律、守恒律验证 | ✅ 完整 |
-| **自然语言解析** | 中文/英文自由文本 → DAG + SCM | ✅ 规则+模板 |
+| **自然语言解析** | 中文/英文自由文本 → DAG + SCM + 自动分析 | ✅ LLM (DeepSeek) |
+| **LLM 集成** | DeepSeek API: 因果图提取 + 结果解读 + 反事实叙事 | ✅ 完整 |
+| **自主诊断** | 残差正态性检查 + 协变量重叠性 + 自动方法选择 | ✅ 完整 |
 | **时间序列因果** | Granger, TS-PC, PCMCI-lite | ✅ 原型 |
-| **交互式 CLI** | 15+ 命令、自动补全、彩色输出 | ✅ 完整 |
+| **交互式 CLI** | 15+ 命令、自然语言 `ask`、彩色输出 | ✅ 完整 |
 
 ---
 
@@ -256,9 +258,33 @@ opt = principle.find_stationary_path(q_start=0.5, q_end=-0.3, n_steps=100, dt=0.
 > discover data.csv pc              # PC 算法
 > discover data.csv ges --bootstrap=100   # GES + 自举
 > discover data.csv fci             # FCI (含隐变量)
+
+### 8.3 LLM 自然语言提问
+
+```python
+> ask 吸烟会导致肺癌吗，有哪些混杂因素
+  # Agent 自动执行 5 步：
+  # Step 1: LLM 提取因果图 (6变量, 7边, 含混杂因子)
+  # Step 2: 构建 CausalDAG
+  # Step 3: 识别因果效应 (back-door / do-calculus)
+  # Step 4: 自动生成数据 → 诊断假设 → 选择最佳方法 → 估计 ATE
+  # Step 5: LLM 生成中文自然语言解读 (效应大小/置信区间/稳健性/行动建议)
 ```
 
-### 8.4 可视化
+### 8.4 自主诊断与自动方法选择
+
+```
+Agent 自动执行：
+  1. 残差正态性检查 (skewness + kurtosis)
+  2. 协变量重叠性检查 (SMD — Standardized Mean Difference)
+  3. 根据诊断结果自动选择最佳估计器：
+     linearity ✓ + overlap ✓  → linear (最高效)
+     overlap ~                → PSM (倾向得分匹配)
+     linearity ~              → IPW (不需要线性假设)
+     linearity ✗ + overlap ✗  → DR (双重鲁棒)
+```
+
+### 8.5 可视化
 
 ```python
 > dag show               # ASCII 图

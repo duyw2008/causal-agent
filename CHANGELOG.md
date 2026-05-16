@@ -4,7 +4,39 @@
 
 ---
 
-## v0.9.4 (2026-05-14) — do-calculus 死代码修复
+## v0.9.6 (2026-05-14) — 自主诊断 + 自动数据生成 + 自动方法选择
+
+### 新增能力
+
+| 能力 | 实现位置 | 说明 |
+|------|---------|------|
+| 自动数据生成 | `agent.py` → `ask_llm()` | 无数据时从因果图自动构建线性 SCM 并采样 500 条 |
+| 假设诊断 | `agent.py` → `_run_diagnostics()` | 残差正态性检查 (skewness+kurtosis) + 协变量重叠性 (SMD) |
+| 自动方法选择 | `agent.py` → `_auto_select_method()` | linear → PSM(重叠差) → IPW(非线性) → DR(都差) |
+| API Key 持久化 | `core/llm_client.py` | 配置文件 `~/.hermes/causal_config.json` 自动读取 |
+
+### 文档
+
+| 文档 | 更新 |
+|------|------|
+| RUNNING.md | 重写 — LLM 模式 / 无LLM模式双轨指南 + 命令速查 + FAQ |
+
+---
+
+## v0.9.5 (2026-05-14) — DeepSeek LLM 集成
+
+### 新增模块
+
+| 模块 | 文件 | 说明 |
+|------|------|------|
+| LLM 客户端 | `core/llm_client.py` | DeepSeek API 客户端 (urllib, 零依赖) |
+| 自然语言接口 | `agent.py` → `ask` 命令 | 5-step pipeline: extract→build→identify→estimate→explain |
+
+### Agent 新增命令
+
+| 命令 | 说明 |
+|------|------|
+| `ask <自然语言问题>` | 一步完成因果分析：LLM 提取因果图 → 识别 → 估计 → 中文解读 |
 
 ### Bug修复
 
