@@ -34,6 +34,7 @@ class ConstraintType(Enum):
     CONSERVATION = "conservation"    # 守恒律验证
     BOUNDARY = "boundary"           # 取值范围约束
     SYMMETRY = "symmetry"           # 对称性约束
+    VARIATIONAL = "variational"     # 变分原理 (最小作用量 / Euler-Lagrange)
 
 
 # ═══════════════════════════════════════════════════════════════════
@@ -339,6 +340,21 @@ class PhysicsLibrary:
                 constraint_type=ConstraintType.SCM_EQUATION,
                 formula="lambda a1,v1,a2: (a1 * v1) / max(a2, 0.001)",
                 causal_direction=[("Area_in","Velocity_out"), ("Velocity_in","Velocity_out"), ("Area_out","Velocity_out")],
+            ),
+
+            # ── Variational Principle ──
+            PhysicsLaw(
+                name="least_action",
+                domain="mechanics",
+                latex=r"$\delta S = \delta \int L \, dt = 0$",
+                inputs=["trajectory"],
+                outputs=[],
+                constraint_type=ConstraintType.VARIATIONAL,
+                formula=None,
+                causal_direction=[],
+                forbidden_directions=[],
+                required_parents={},
+                tolerance=0.01,
             ),
         ]
 
@@ -732,6 +748,146 @@ class SymbolicPhysicsDiscovery:
             if target in law.outputs and set(law.inputs) == set(parents):
                 return law.name
         return None
+
+
+# ═══════════════════════════════════════════════════════════════════
+#  Lagrangian Mechanics — Principle of Least Action
+# ═══════════════════════════════════════════════════════════════════
+
+
+@dataclass
+class LagrangianSystem:
+    """A physical system defined by its Lagrangian L = T - V.
+
+    Attributes:
+        name: Human-readable system name.
+        generalized_coords: List of generalized coordinate names.
+        kinetic_energy: T(q_dot, q, params) -> float.
+        potential_energy: V(q, params) -> float.
+        params: Parameter dict (e.g. {'g': 9.81, 'l': 1.0}).
+    """
+    name: str
+    generalized_coords: List[str]
+    kinetic_energy: Callable
+    potential_energy: Callable
+    params: Dict[str, float] = field(default_factory=dict)
+
+    def lagrangian(self, q: float, q_dot: float, t: float = 0.0) -> float:
+        """L = T - V"""
+        return (self.kinetic_energy(q_dot, q, self.params) -
+                self.potential_energy(q, self.params))
+
+    def equations_of_motion(self) -> str:
+        return f"{self.name}: δS/δq = 0 → d/dt(∂L/∂q̇) - ∂L/∂q = 0"
+
+
+def harmonic_oscillator(m: float = 1.0, k: float = 1.0) -> LagrangianSystem:
+    """Harmonic oscillator: L = ½mẋ² - ½kx²  →  ẍ + (k/m)x = 0"""
+    return LagrangianSystem(
+        name="harmonic_oscillator",
+        generalized_coords=["x"],
+        kinetic_energy=lambda qd, q, p: 0.5 * p.get("m", m) * qd**2,
+        potential_energy=lambda q, p: 0.5 * p.get("k", k) * q**2,
+        params={"m": m, "k": k},
+    )
+
+
+def simple_pendulum(l: float = 1.0, g: float = 9.81) -> LagrangianSystem:
+    """Simple pendulum: L = ½ml²θ̇² - mgl(1-cosθ)  →  θ̈ + (g/l)sinθ = 0"""
+    return LagrangianSystem(
+        name="simple_pendulum",
+        generalized_coords=["theta"],
+        kinetic_energy=lambda qd, q, p: (
+            0.5 * p.get("m", 1.0) * p.get("l", l)**2 * qd**2),
+        potential_energy=lambda q, p: (
+            p.get("m", 1.0) * p.get("g", g) * p.get("l", l) * (1.0 - np.cos(q))),
+        params={"l": l, "g": g, "m": 1.0},
+    )
+
+
+@dataclass
+class ActionPrinciple:
+    """Validate and optimize physical trajectories via δS = 0.
+
+    True physical paths are stationary points of the action functional
+    S[q] = ∫ L dt.  For causal inference, counterfactual trajectories
+    must satisfy δS ≈ 0 — trajectories with large δS are impossible.
+    """
+    system: LagrangianSystem
+    tolerance: float = 0.01
+
+    def compute_action(self, q_path: np.ndarray, dt: float) -> float:
+        """S = Σ L(q_i, q̇_i) · Δt  (discretized action)"""
+        n = len(q_path)
+        if n < 2:
+            return 0.0
+        S = 0.0
+        for i in range(n - 1):
+            q = q_path[i]
+            q_dot = (q_path[i + 1] - q_path[i]) / dt
+            S += self.system.lagrangian(q, q_dot, i * dt) * dt
+        return S
+
+    def variational_derivative(self, q_path: np.ndarray,
+                                dt: float) -> np.ndarray:
+        """Compute δS/δq_i at interior points via central difference."""
+        n = len(q_path)
+        eps = 1e-6
+        derivs = np.zeros(n - 2)
+        for i in range(1, n - 1):
+            qp, qm = q_path.copy(), q_path.copy()
+            qp[i] += eps
+            qm[i] -= eps
+            derivs[i - 1] = (self.compute_action(qp, dt) -
+                             self.compute_action(qm, dt)) / (2 * eps)
+        return derivs
+
+    def validate_trajectory(self, q_path: np.ndarray, dt: float) -> Dict:
+        """Check if a trajectory satisfies the Principle of Least Action."""
+        derivs = self.variational_derivative(q_path, dt)
+        max_g = float(np.max(np.abs(derivs)))
+        rms_g = float(np.sqrt(np.mean(derivs ** 2)))
+        n_viol = int(np.sum(np.abs(derivs) > self.tolerance))
+        S = self.compute_action(q_path, dt)
+        valid = max_g < self.tolerance
+        return {
+            "valid": valid,
+            "max_gradient": max_g,
+            "rms_gradient": rms_g,
+            "action": S,
+            "n_violations": n_viol,
+            "verdict": (f"✓ Valid (max|δS/δq|={max_g:.2e})" if valid else
+                        f"✗ Invalid ({n_viol}/{len(derivs)} pts violate, "
+                        f"max={max_g:.2e})"),
+        }
+
+    def find_stationary_path(self, q_start: float, q_end: float,
+                              n_steps: int, dt: float,
+                              max_iter: int = 500,
+                              lr: float = 0.01) -> Dict:
+        """Find stationary-action path via gradient descent."""
+        q = np.linspace(q_start, q_end, n_steps)
+        for it in range(max_iter):
+            d = self.variational_derivative(q, dt)
+            if np.max(np.abs(d)) < self.tolerance:
+                return {"q_path": q, "action": self.compute_action(q, dt),
+                        "max_gradient": float(np.max(np.abs(d))),
+                        "iterations": it + 1, "converged": True}
+            q[1:-1] -= lr * d
+        d = self.variational_derivative(q, dt)
+        return {"q_path": q, "action": self.compute_action(q, dt),
+                "max_gradient": float(np.max(np.abs(d))),
+                "iterations": max_iter, "converged": False}
+
+    def compare_paths(self, a: np.ndarray, b: np.ndarray,
+                       dt: float) -> Dict:
+        """Compare two paths — lower action is physically preferred."""
+        Sa = self.compute_action(a, dt)
+        Sb = self.compute_action(b, dt)
+        return {"path_a_action": Sa, "path_b_action": Sb, "delta_S": Sa - Sb,
+                "preferred": "a" if Sa < Sb else "b",
+                "valid_a": self.validate_trajectory(a, dt)["valid"],
+                "valid_b": self.validate_trajectory(b, dt)["valid"]}
 
 
 # ═══════════════════════════════════════════════════════════════════

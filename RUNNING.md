@@ -1,7 +1,7 @@
 # Causal Agent — Linux 运行指南
 
 > 最后更新: 2026-05-14
-> 适用系统: Arch Linux / Ubuntu / Debian / CentOS
+> 版本: v0.9.2
 > Python 版本: ≥ 3.10
 
 ---

@@ -1,7 +1,7 @@
 # Causal Agent — 系统架构文档
 
 > 最后更新: 2026-05-14
-> 状态: v0.9.1 — Phase 4 完成 (物理因果引擎 + LLM 原型 + GES collider 修复)
+> 状态: v0.9.2 — Phase 4 完成 + 变分原理集成 (最小作用量)
 
 ---
 
@@ -82,7 +82,9 @@ causal_agent/
 ├── ARCHITECTURE.md             [✅] 本文档
 ├── MODELS_AND_ALGORITHMS.md    [✅] 模型与算法设计 (LaTeX 数学)
 ├── CAPABILITIES.md              [✅] 能力全景图 — 全功能速览
+├── JEPA_CAUSAL_ARCHITECTURE.md  [✅] JEPA × Causal 合成架构分析
 ├── PHYSICS_EXTENSION_GUIDE.md  [✅] 物理规律扩展指南
+├── PHYSICS_LEAST_ACTION.md    [✅] 最小作用量原理集成方案
 ├── DATA_REQUIREMENTS.md        [✅] 数据需求与训练方案
 ├── ROADMAP.md                  [✅] 六阶段完善路线图
 ├── CHANGELOG.md                [✅] 变更日志

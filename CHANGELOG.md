@@ -4,6 +4,41 @@
 
 ---
 
+## v0.9.2 (2026-05-14) — 最小作用量原理集成
+
+### 新增模块
+
+| 模块 | 文件 | 说明 |
+|------|------|------|
+| 拉格朗日力学系统 | `core/physics.py` | LagrangianSystem, ActionPrinciple, 工厂函数 |
+| 变分原理约束 | `core/physics.py` | ConstraintType.VARIATIONAL — 轨迹级物理约束 |
+| 最小作用量 Demo | `demos/least_action_demo.py` | 单摆 + 谐振子轨迹验证 |
+
+### 算法改进
+
+| 改进 | 详细 |
+|------|------|
+| 物理定律库 14→15 条 | 新增 `least_action`: δS = δ∫L dt = 0 |
+| 约束层级提升 | 单条定律 → 守恒律 → **变分原理** (全局轨迹约束) |
+| ActionPrinciple | compute_action, validate_trajectory, find_stationary_path, compare_paths |
+| Fibonacci search 梯度下降 | 支持从任意初始路径恢复物理稳态路径 |
+
+### 新增系统
+
+| 系统 | 拉格朗日量 | 运动方程 |
+|------|-----------|---------|
+| harmonic_oscillator | L = ½mẋ² − ½kx² | ẍ + (k/m)x = 0 |
+| simple_pendulum | L = ½ml²θ̇² − mgl(1−cosθ) | θ̈ + (g/l)sinθ = 0 |
+
+### 文档
+
+| 文档 | 更新内容 |
+|------|---------|
+| PHYSICS_LEAST_ACTION.md | 完整设计文档 — 原理、代码、Demo、理论推导 |
+| 全部 8 份文档 | 版本号升至 v0.9.2 |
+
+---
+
 ## v0.9.1 (2026-05-14) — GES collider 修复 + 文档同步
 
 ### Bug修复

@@ -1,6 +1,6 @@
 # Causal Agent 能力全景图
 
-> 版本: v0.9.1 (2026-05-14)
+> 版本: v0.9.2 (2026-05-14)
 > 路径: `/home/duyw/causal_agent/`
 > 测试: 52/52 passing
 
@@ -192,12 +192,13 @@ intv_scm.sample(1000)           # 从 P(y|do(X=1)) 采样
 | DAG 层 | 因果方向约束 | 物理定律禁止的边被标记为 forbidden |
 | SCM 层 | 方程替换 | PhysicsInformedSCM 用精确方程替换学习到的边 |
 | 守恒律层 | 输出验证 | 反事实结果必须满足能量/动量守恒 |
+| **变分层** | 轨迹验证 | 整条演化路径必须满足 δS=0 |
 
-### 7.2 定律库 (14条)
+### 7.2 定律库 (15条)
 
 | 领域 | 定律数 | 示例 |
 |------|:---:|------|
-| 力学 | 7 | Newton F=ma, Hooke F=−kx, 万有引力 |
+| 力学 | 8 | Newton F=ma, Hooke F=−kx, 万有引力, **最小作用量** |
 | 电磁学 | 3 | Coulomb, Ohm, Lorentz |
 | 热力学 | 2 | 理想气体 PV=nRT, 热传导 |
 | 流体 | 2 | Bernoulli, 达西定律 |
@@ -209,6 +210,25 @@ SymbolicPhysicsDiscovery:  从数据中自动发现物理公式
   - 符号回归: 用符号组合拟合数据
   - 维度分析: 检查量纲正确性
   - 与已知定律库比对
+```
+
+### 7.4 最小作用量原理 (v0.9.2 新增)
+
+```python
+# 拉格朗日力学系统
+from core.physics import simple_pendulum, harmonic_oscillator, ActionPrinciple
+
+pendulum = simple_pendulum(l=1.0, g=9.81)
+principle = ActionPrinciple(pendulum, tolerance=0.02)
+
+# 验证轨迹
+result = principle.validate_trajectory(theta_path, dt=0.01)
+print(result["valid"])        # True/False
+print(result["action"])       # 作用量 S
+print(result["max_gradient"]) # max|δS/δq|
+
+# 从任意初始路径寻找稳态路径
+opt = principle.find_stationary_path(q_start=0.5, q_end=-0.3, n_steps=100, dt=0.01)
 ```
 
 ---
@@ -314,6 +334,9 @@ python demos/tutorial.py
 
 # 物理因果
 python demos/physics_causal_demo.py
+
+# 最小作用量原理
+python demos/least_action_demo.py
 
 # 运行全部测试 (52个)
 python -c "
