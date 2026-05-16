@@ -4,7 +4,24 @@
 
 ---
 
-## v0.9.2 (2026-05-14) — 最小作用量原理集成
+## v0.9.4 (2026-05-14) — do-calculus 死代码修复
+
+### Bug修复
+
+| 模块 | 文件 | 问题 | 修复 |
+|------|------|------|------|
+| do-calculus 死代码 | `core/identification.py` | R1-R3 已实现但 `identify_effect()` 从不调用；back-door/front-door/IV 失败后直接返回"不可识别" | 新增 Phase 4: do-calculus fallback — 穷举所有候选调整集 W，用 Rule 1 (Y ⊥ Z \| X,W in G_{X̄}) 验证，使之前被误判为不可识别的因果图现在可被识别 |
+
+### 算法改进
+
+| 改进 | 详细 |
+|------|------|
+| `identify_effect()` 管线升级 | 1.d-separation → 2.back-door → 3.front-door → **4.do-calculus** (新增) → 5.not identifiable |
+| do-calculus Rule 1 搜索 | 穷举非后代变量的所有子集作为调整集，用 d-separation 在 G_{X̄} 中验证有效性 |
+
+---
+
+## v0.9.3 (2026-05-14) — 因果中介分析
 
 ### 新增模块
 

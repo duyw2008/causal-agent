@@ -1,6 +1,6 @@
 # Causal Agent 能力全景图
 
-> 版本: v0.9.2 (2026-05-14)
+> 版本: v0.9.4 (2026-05-14)
 > 路径: `/home/duyw/causal_agent/`
 > 测试: 52/52 passing
 
