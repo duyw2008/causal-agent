@@ -26,6 +26,8 @@ from core.modern import (
 )
 from core.sensitivity import full_sensitivity_report
 from core.visualization import dag_to_ascii, dag_to_dot, render_dag
+from core.mediation import analyze_mediation
+from core.llm_client import LLMCausalInterface, DeepSeekClient
 from nlp.parser import CausalParser, load_template
 import numpy as np
 
@@ -57,6 +59,7 @@ class CausalAgent:
         self.scm: Optional[SCM] = None
         self.data: Optional[np.ndarray] = None
         self.history: List[Dict[str, Any]] = []
+        self.llm = LLMCausalInterface(DeepSeekClient())
 
     # ── scenario ingestion ───────────────────────────────────────
 
@@ -361,6 +364,113 @@ class CausalAgent:
 
         return "\n".join(lines)
 
+    # ── LLM-powered natural language query ────────────────────
+
+    def ask_llm(self, question: str) -> str:
+        """Ask a causal question in natural language.
+
+        Pipeline:
+          1. LLM extracts causal graph + treatment/outcome from text
+          2. Build CausalDAG from LLM output
+          3. Identify the causal effect
+          4. If data available, estimate + sensitivity
+          5. LLM explains the result in natural language
+        """
+        lines = []
+        lines.append(cyan(f"Query: {question}"))
+        lines.append(cyan("─" * 50))
+
+        # Step 1: LLM extracts causal graph
+        lines.append(bold("Step 1: Extracting causal structure..."))
+        graph_info = self.llm.extract_causal_graph(question)
+
+        if "error" in graph_info:
+            lines.append(red(f"  LLM extraction failed: {graph_info['error']}"))
+            if "raw_response" in graph_info:
+                lines.append(yellow(f"  Raw: {graph_info['raw_response'][:200]}"))
+            return "\n".join(lines)
+
+        variables = graph_info.get("variables", [])
+        edges = graph_info.get("edges", [])
+        treatment = graph_info.get("treatment", "")
+        outcome = graph_info.get("outcome", "")
+        confounders = graph_info.get("confounders", [])
+        justification = graph_info.get("justification", "")
+
+        lines.append(green(f"  Variables: {', '.join(variables)}"))
+        lines.append(green(f"  Edges: {', '.join(f'{u}→{v}' for u,v in edges)}"))
+        lines.append(green(f"  Treatment: {treatment}, Outcome: {outcome}"))
+        if confounders:
+            lines.append(green(f"  Confounders: {', '.join(confounders)}"))
+        if justification:
+            lines.append(f"  {justification[:120]}...")
+
+        # Step 2: Build CausalDAG
+        lines.append(f"\n{bold('Step 2: Building causal model...')}")
+        try:
+            self.dag = CausalDAG(variables, edges)
+            lines.append(green(f"  DAG built: {self.dag.summary()}"))
+        except Exception as e:
+            return "\n".join(lines) + f"\n{red(f'DAG construction error: {e}')}"
+
+        # Step 3: Identification
+        lines.append(f"\n{bold('Step 3: Identifying causal effect...')}")
+        if treatment not in self.dag.variables or outcome not in self.dag.variables:
+            return "\n".join(lines) + f"\n{red(f'{treatment} or {outcome} not in DAG')}"
+
+        result = identify_effect(self.dag, treatment, outcome)
+        lines.append(green(f"  Method: {result.method}"))
+        if result.adjustment_set is not None:
+            adj_str = ", ".join(result.adjustment_set) if result.adjustment_set else "∅"
+            lines.append(green(f"  Adjustment set: {{{adj_str}}}"))
+        lines.append(green(f"  Identifiable: {result.identifiable}"))
+
+        if not result.identifiable:
+            lines.append(yellow(f"  {result.explanation}"))
+            return "\n".join(lines)
+
+        # Step 4: Estimation (if data or SCM available)
+        ate_val, se_val = 0.0, 0.0
+        if self.data is not None and result.adjustment_set is not None:
+            lines.append(f"\n{bold('Step 4: Estimating causal effect...')}")
+            est = estimate_effect(
+                self.data, self.dag.variables, treatment, outcome,
+                result.adjustment_set, method="dr",
+            )
+            ate_val, se_val = est.ate, est.std_error
+            lines.append(green(f"  ATE = {ate_val:.4f}  (SE = {se_val:.4f})"))
+            lines.append(green(f"  95% CI = [{est.ci_lower:.4f}, {est.ci_upper:.4f}]"))
+            sig = "✓ significant" if est.is_significant() else "not significant"
+            lines.append(green(f"  {sig}"))
+
+            sens_report = full_sensitivity_report(est.ate, est.std_error)
+            lines.append(f"\n  {sens_report}")
+        else:
+            lines.append(yellow(
+                f"\n  (No data loaded. Load with 'load_data <file.csv>' "
+                f"for numerical estimation.)"
+            ))
+
+        # Step 5: LLM explanation
+        lines.append(f"\n{bold('Step 5: Natural language explanation...')}")
+        try:
+            explanation = self.llm.explain_result(
+                treatment=treatment, outcome=outcome,
+                variables=", ".join(variables),
+                dag_summary=str(self.dag),
+                method=result.method,
+                adjustment_set=", ".join(result.adjustment_set) if result.adjustment_set else "none",
+                ate=ate_val, se=se_val if se_val > 0 else 0.5,
+                evalue=2.0,
+                interpretation=result.explanation,
+            )
+            lines.append(f"\n{cyan(explanation)}")
+        except Exception as e:
+            lines.append(yellow(f"  LLM explanation skipped: {e}"))
+
+        self.history.append({"type": "llm_query", "question": question})
+        return "\n".join(lines)
+
 
 def _format_intervention(d: Dict[str, float]) -> str:
     return ", ".join(f"{k}={v}" for k, v in d.items())
@@ -469,6 +579,11 @@ def _process(agent: CausalAgent, user_input: str) -> str:
 
     if cmd in ("load", "scenario"):
         return agent.load_scenario(rest)
+
+    if cmd in ("ask", "query", "q"):
+        if not rest:
+            return "Usage: ask <your causal question in natural language>"
+        return agent.ask_llm(rest)
 
     if cmd in ("template", "t"):
         return agent.load_scenario(rest)
