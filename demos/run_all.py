@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-Demo Suite — Causal Agent v0.8 全功能验证
+Demo Suite — Causal Agent v0.9.6 全功能验证
 
 运行:  python demos/run_all.py
       或逐个运行下面的 demo 脚本
@@ -260,6 +260,87 @@ def demo5_domain_transfer():
     return True
 
 
+def demo6_causal_mediation():
+    """Demo 6: Causal Mediation — NDE/NIE/CDE decomposition"""
+    print(hdr("Demo 6: Causal Mediation — NDE/NIE/CDE"))
+
+    from core.graph import CausalDAG
+    from core.scm import linear_scm
+    from core.mediation import analyze_mediation
+
+    dag = CausalDAG(["T","M","Y"], [("T","M"),("T","Y"),("M","Y")])
+    scm = linear_scm(dag, {"M": {"T": 1.5}, "Y": {"T": 2.0, "M": 1.0}}, noise_std=0.1)
+
+    r = analyze_mediation(dag, scm=scm, treatment="T", mediator="M", outcome="Y")
+    print(r.summary())
+
+    assert abs(r.total_effect - 3.5) < 0.3
+    assert abs(r.nde - 2.0) < 0.3
+    assert abs(r.nie - 1.5) < 0.3
+    return True
+
+
+def demo7_least_action():
+    """Demo 7: Principle of Least Action — Pendulum trajectory validation"""
+    print(hdr("Demo 7: Principle of Least Action"))
+
+    import numpy as np
+    from core.physics import simple_pendulum, ActionPrinciple
+
+    system = simple_pendulum(l=1.0, g=9.81)
+    principle = ActionPrinciple(system, tolerance=0.02)
+
+    omega = np.sqrt(9.81)
+    n_steps = 100
+    T_final = 0.95
+    dt = T_final / (n_steps - 1)
+    t = np.linspace(0, T_final, n_steps)
+    theta_0 = 0.5
+
+    path_physical = theta_0 * np.cos(omega * t)
+    path_linear = np.linspace(theta_0, path_physical[-1], n_steps)
+
+    S_phys = principle.compute_action(path_physical, dt)
+    S_lin = principle.compute_action(path_linear, dt)
+    result = principle.validate_trajectory(path_physical, dt)
+
+    print(f"  Physical action: {S_phys:.6f}")
+    print(f"  Linear action:   {S_lin:.6f}")
+    print(f"  Physical valid:  {result['valid']}")
+    print(f"  ΔS (physical preferred): {S_phys < S_lin}")
+
+    assert result["valid"]
+    assert S_phys < S_lin
+    return True
+
+
+def demo8_llm_client():
+    """Demo 8: LLM Client — causal graph extraction (skip if no API key)"""
+    print(hdr("Demo 8: LLM Client — Causal Graph Extraction"))
+
+    from core.llm_client import LLMCausalInterface
+
+    llm = LLMCausalInterface()
+    # Smoke test: verify client initializes without error
+    print(f"  Client initialized: ✓")
+    print(f"  API key configured: {'✓' if llm.client.api_key else '✗ (skip — set DEEPSEEK_API_KEY or ~/.hermes/causal_config.json)'}")
+
+    if not llm.client.api_key:
+        print(yellow("  Skipping extraction test (no API key)"))
+        return True
+
+    result = llm.extract_causal_graph("Does education increase income?")
+    if "error" in result:
+        print(yellow(f"  Extraction skipped: {result['error'][:80]}"))
+        return True
+
+    print(f"  Variables: {result.get('variables', [])}")
+    print(f"  Treatment: {result.get('treatment', '')}")
+    assert "variables" in result
+    assert "edges" in result
+    return True
+
+
 # ══════════════════════════════════════════════════════════════
 
 if __name__ == "__main__":
@@ -269,6 +350,9 @@ if __name__ == "__main__":
         ("Counterfactual Reasoning", demo3_counterfactual),
         ("Modern Methods — DML + CATE", demo4_modern_methods),
         ("Domain Transfer — 8 领域", demo5_domain_transfer),
+        ("Causal Mediation — NDE/NIE/CDE", demo6_causal_mediation),
+        ("Least Action Principle", demo7_least_action),
+        ("LLM Client — Causal Graph Extraction", demo8_llm_client),
     ]
 
     passed = 0
