@@ -25,7 +25,7 @@ from core.modern import (
     estimate_cate_xlearner, estimate_cate_forest, estimate_ate_dowhy,
 )
 from core.sensitivity import full_sensitivity_report
-from core.visualization import dag_to_ascii, dag_to_dot, render_dag
+from core.visualization import dag_to_ascii, dag_to_dot, render_dag, pag_to_ascii
 from core.mediation import analyze_mediation
 from core.llm_client import LLMCausalInterface, DeepSeekClient
 from nlp.parser import CausalParser, load_template
@@ -799,6 +799,12 @@ def _process(agent: CausalAgent, user_input: str) -> str:
 
     if cmd in ("dag_show", "dag show", "show", "ascii"):
         if agent.dag:
+            try:
+                from core.discovery import PAG
+                if isinstance(agent.dag, PAG):
+                    return pag_to_ascii(agent.dag)
+            except ImportError:
+                pass
             return dag_to_ascii(agent.dag)
         return "No model loaded."
 

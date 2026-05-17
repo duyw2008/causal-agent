@@ -94,6 +94,66 @@ def dag_to_ascii(dag) -> str:
     return result
 
 
+def pag_to_ascii(pag) -> str:
+    """Render a Partial Ancestral Graph (PAG) as ASCII art.
+
+    Shows PAG-specific edge types that dag_to_ascii loses:
+      →   (directed)     A causes B
+      ◦→  (ancestral)    A is ancestor of B (possibly indirect)
+      ◦—◦ (undetermined) unknown relationship
+      ↔   (confounded)   hidden common cause
+    """
+    from .discovery import PAG, PAGEdge
+    if not isinstance(pag, PAG):
+        return dag_to_ascii(pag)
+
+    n = pag.n
+    names = pag.var_names
+
+    # Count edges
+    n_edges = 0
+    seen = set()
+    for i in range(n):
+        for j, edge in pag._adj[i].items():
+            if (j, i) not in seen:
+                seen.add((i, j))
+                n_edges += 1
+
+    lines = []
+    lines.append(f"PAG: {n} variables, {n_edges} edges")
+    lines.append("  Edge legend: → directed  ◦→ ancestral  ◦—◦ undetermined  ↔ confounded")
+    lines.append("")
+
+    mark_map = {0: "—", 1: "→", 2: "◦"}
+
+    for (i, j) in sorted(seen):
+        edge = pag._adj[i].get(j)
+        if edge is None:
+            continue
+        left = mark_map.get(edge.mark_u, "?")
+        right = mark_map.get(edge.mark_v, "?")
+        symbol = f"{left}{right}"
+
+        if edge.is_directed:
+            etype = "directed"
+        elif edge.is_bidirected:
+            etype = "confounded (↔)"
+        elif edge.is_undetermined:
+            etype = "undetermined (◦—◦ or ◦→)"
+        else:
+            etype = "undirected"
+
+        lines.append(f"  {names[i]} {symbol} {names[j]:10s}  [{etype}]")
+
+    lines.append("")
+    lines.append("  Adjacency:")
+    for i in range(n):
+        adj_list = [names[j] for j in pag._adj[i]]
+        lines.append(f"    {names[i]}: {{{', '.join(adj_list)}}}")
+
+    return "\n".join(lines)
+
+
 def dag_to_dot(dag, highlight_treatment=None, highlight_outcome=None,
                highlight_adjustment=None) -> str:
     """
