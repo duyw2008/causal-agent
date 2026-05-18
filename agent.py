@@ -10,7 +10,14 @@ Usage:
 
 from __future__ import annotations
 import sys
+import os
 from typing import Any, Dict, List, Optional
+
+try:
+    import readline
+    _HAS_READLINE = True
+except ImportError:
+    _HAS_READLINE = False
 
 from core.graph import CausalDAG
 from core.scm import SCM, linear_scm, StructuralEquation
@@ -662,6 +669,43 @@ def run_demo():
 
 def run_interactive(initial_query: Optional[str] = None):
     agent = CausalAgent()
+
+    # ── readline history support ──────────────────────────────────
+    HISTORY_FILE = os.path.expanduser("~/.hermes/causal_agent_history")
+    HISTORY_MAX = 2000
+
+    def _load_history():
+        if not _HAS_READLINE:
+            return
+        os.makedirs(os.path.dirname(HISTORY_FILE), exist_ok=True)
+        try:
+            readline.read_history_file(HISTORY_FILE)
+        except FileNotFoundError:
+            pass
+
+    def _save_history():
+        if not _HAS_READLINE:
+            return
+        try:
+            readline.set_history_length(HISTORY_MAX)
+            readline.write_history_file(HISTORY_FILE)
+        except Exception:
+            pass
+
+    def _add_history(line: str):
+        if not _HAS_READLINE or not line.strip():
+            return
+        # strip duplicates — don't add if same as last entry
+        try:
+            n = readline.get_current_history_length()
+            if n > 0 and readline.get_history_item(n) == line.strip():
+                return
+        except Exception:
+            pass
+        readline.add_history(line.strip())
+
+    _load_history()
+
     print(bold("=" * 60))
     print(bold("  Causal Inference Agent"))
     print(bold("  Type 'help' for commands, 'quit' to exit"))
@@ -676,11 +720,14 @@ def run_interactive(initial_query: Optional[str] = None):
             user_input = input(f"\n{cyan('>')} ").strip()
             if not user_input:
                 continue
+            _add_history(user_input)
             if user_input.lower() in ("quit", "exit", "q"):
+                _save_history()
                 print("Goodbye!")
                 break
             print(_process(agent, user_input))
         except KeyboardInterrupt:
+            _save_history()
             print("\nGoodbye!")
             break
         except Exception as e:

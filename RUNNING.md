@@ -1,7 +1,7 @@
 # Causal Agent — 运行指南
 
-> 最后更新: 2026-05-18
-> 版本: v0.9.7
+> 最后更新: 
+> 版本: v0.9.8 | 日期: 2026-05-18
 > Python 版本: ≥ 3.10
 
 ---
@@ -25,6 +25,20 @@ python3 -m venv ~/causal_venv
 source ~/causal_venv/bin/activate
 pip install numpy
 ```
+
+### 1.3 命令历史（↑↓ 导航）
+
+交互模式下支持 ↑↓ 键浏览前序输入的命令：
+
+```
+↑ 键 — 上一条命令
+↓ 键 — 下一条命令
+```
+
+- 自动保存到 `~/.hermes/causal_agent_history`（最多 2000 条）
+- 跨 session 持久化 — 关闭后下次启动仍可回溯
+- 自动去重 — 连续相同命令只保留一条
+- 依赖 Python `readline` 模块（Linux 自带，Windows 需 `pip install pyreadline3`）
 
 ---
 

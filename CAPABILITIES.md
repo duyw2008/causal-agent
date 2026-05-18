@@ -1,6 +1,6 @@
 # Causal Agent 能力全景图
 
-> 版本: v0.9.7 (2026-05-18)
+> 版本: v0.9.8 (2026-05-18)
 > 路径: `/home/duyw/causal_agent/`
 > 测试: 52/52 passing
 
@@ -396,8 +396,8 @@ print('52/52 passing')
 | 架构 | ARCHITECTURE.md | 系统设计、模块树、文件功能 |
 | 模型与算法 | MODELS_AND_ALGORITHMS.md | LaTeX 数学推导 (875行, 405公式) |
 | 设计报告 | DESIGN_REPORT.md | 设计哲学、架构原理 |
-| 路线图 | ROADMAP.md | 六阶段计划 (当前 v0.9.7, 72%) |
+| 路线图 | ROADMAP.md | 六阶段计划 (当前 v0.9.8, 72%) |
 | 运行指南 | RUNNING.md | 环境配置、运行、调试 |
-| 变更日志 | CHANGELOG.md | v0.5 → v0.9.7 全历史 |
+| 变更日志 | CHANGELOG.md | v0.5 → v0.9.8 全历史 |
 | 物理扩展 | PHYSICS_EXTENSION_GUIDE.md | 三维扩展流程、代码模板 |
 | 能力全景 | CAPABILITIES.md | 本文档 — 全功能速览 |

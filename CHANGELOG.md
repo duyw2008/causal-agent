@@ -4,6 +4,30 @@
 
 ---
 
+## v0.9.8 (2026-05-18) — readline 命令历史支持
+
+### 新增能力
+
+| 能力 | 实现位置 | 说明 |
+|------|---------|------|
+| 命令历史导航 | `agent.py` → `run_interactive()` | ↑↓ 键选择前序输入命令 |
+| 跨 session 持久化 | `~/.hermes/causal_agent_history` | 最多 2000 条历史记录，自动去重 |
+| 优雅降级 | `agent.py` | 无 readline 模块时静默降级，不影响正常使用 |
+
+### 技术细节
+
+- `import readline` 在 Linux 上自动启用 `input()` 的 ↑↓ 导航
+- `HISTORY_FILE = ~/.hermes/causal_agent_history` — 退出时自动保存，启动时自动加载
+- 去重策略：仅去连续重复（与 bash `ignoredups` 一致）
+
+### 文档
+
+| 文档 | 更新 |
+|------|------|
+| RUNNING.md | 新增 §1.5 readline 历史记录说明 |
+
+---
+
 ## v0.9.7 (2026-05-18) — 文档同步与质量审计
 
 ### 文档修复
