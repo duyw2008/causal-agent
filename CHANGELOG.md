@@ -4,6 +4,29 @@
 
 ---
 
+## v0.9.10 (2026-05-18) — LEARNING.md 新增因果发现方法论 (§4.1 + §4.6-4.7)
+
+### 文档新增
+
+| 内容 | 位置 | 说明 |
+|------|------|------|
+| 从数据到 SCM 两步走方法论 | LEARNING.md §4.1 | Fork/Chain/Collider 条件独立性指纹 + PC 三步过程详解 |
+| 三大现实难点 | LEARNING.md §4.6 | Markov 等价类、因果充分性假设、样本量限制 |
+| Agent 完整流水线 | LEARNING.md §4.7 | discover → effect → whatif → sensitivity 端到端流程 |
+
+涵盖:
+- 为什么条件独立性模式可以泄露因果方向
+- PC 算法从完全图到 DAG 的完整三步 (骨架→v-structure→Meek)
+- 从 DAG 骨架按拓扑序拟合 SCM 方程的过程
+- Markov 等价类 (CPDAG vs PAG)、因果充分性、样本量三大难点
+- Agent 中原始 CSV → 因果结论的完整命令流水线
+
+### 模块变更
+
+无代码功能变更 — 纯文档增强。
+
+---
+
 ## v0.9.9 (2026-05-18) — LEARNING.md 新增 SCM 反事实核心洞察
 
 ### 文档新增

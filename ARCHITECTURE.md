@@ -1,7 +1,7 @@
 # Causal Agent — 系统架构文档
 
 > 最后更新: 2026-05-18
-> 状态: v0.9.9 — Phase 4 完成 + 文档同步与质量审计 | Phase 5 待开始
+> 状态: v0.9.10 — Phase 4 完成 + 文档同步与质量审计 | Phase 5 待开始
 > 测试: 52/52 passing | Demo: 8/8 passing
 
 ---
