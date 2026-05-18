@@ -1,6 +1,6 @@
 # Causal Agent 能力全景图
 
-> 版本: v0.9.6 (2026-05-14)
+> 版本: v0.9.7 (2026-05-18)
 > 路径: `/home/duyw/causal_agent/`
 > 测试: 52/52 passing
 
@@ -309,15 +309,15 @@ Agent 自动执行：
 
 ## 九、数据处理
 
-### 9.1 训练数据集 (5类, 955文件)
+### 9.1 训练数据集 (5类, 1079文件)
 
 | 类型 | 问题数 | 目标 |
 |------|:---:|------|
-| Type 1: 结构学习 | 100 | 数据 → DAG |
-| Type 2: 效应估计 | 300 | (DAG, 数据) → ATE |
-| Type 3: 干预推理 | 150 | (DAG, 数据, do) → E[Y\|do] |
-| Type 4: 反事实 | 96 | (SCM, obs, do) → Y_cf |
-| Type 5: 领域迁移 | 8 domains | 同构因果结构跨域泛化 |
+| Type 1: 结构学习 | 100 CSV + 101 JSON | 数据 → DAG |
+| Type 2: 效应估计 | 300 CSV + 301 JSON | (DAG, 数据) → ATE |
+| Type 3: 干预推理 | 125 CSV + 126 JSON | (DAG, 数据, do) → E[Y\|do] |
+| Type 4: 反事实 | 1 JSON (索引) | (SCM, obs, do) → Y_cf |
+| Type 5: 领域迁移 | 8 domains × 2 = 16 CSV + 9 JSON | 同构因果结构跨域泛化 |
 
 ### 9.2 数据生成
 
@@ -332,10 +332,10 @@ data = generate_linear_data(dag, n_samples=2000, seed=42)  # → np.ndarray
 
 | 项目 | 状态 | 优先级 |
 |------|------|:---:|
-| LLM 真实接入 (API) | 仅原型 `demos/llm_prototype.py` | P1 |
+| LLM 真实接入 (API) | ✅ DeepSeek API (v0.9.5) — 5步 LLM 自主分析管线 | — |
 | PAG 原生可视化 | `dag show` 暂用 to_dag() 转换 | P2 |
-| Type 3 数据集缺原始 CSV | 有 meta (150个), 无 data 文件 | P2 |
-| 因果中介分析 (mediation) | 未实现 | P2 |
+| Type 3 数据集 | ✅ 125 CSV (v0.9.6) — 5 类共 541 CSV 完整 | — |
+| 因果中介分析 (mediation) | ✅ 实现 (v0.9.3) — NDE/NIE/CDE + 路径特异性效应 | — |
 | Web UI / REST API | 未实现 (Phase 5) | P2 |
 | Docker 部署 | 未实现 (Phase 5) | P2 |
 | 因果公平性 (fairness) | 未实现 (Phase 6) | P3 |
@@ -396,8 +396,8 @@ print('52/52 passing')
 | 架构 | ARCHITECTURE.md | 系统设计、模块树、文件功能 |
 | 模型与算法 | MODELS_AND_ALGORITHMS.md | LaTeX 数学推导 (875行, 405公式) |
 | 设计报告 | DESIGN_REPORT.md | 设计哲学、架构原理 |
-| 路线图 | ROADMAP.md | 六阶段计划 (当前 v0.9.1, 88%) |
+| 路线图 | ROADMAP.md | 六阶段计划 (当前 v0.9.7, 72%) |
 | 运行指南 | RUNNING.md | 环境配置、运行、调试 |
-| 变更日志 | CHANGELOG.md | v0.5 → v0.9.1 全历史 |
+| 变更日志 | CHANGELOG.md | v0.5 → v0.9.7 全历史 |
 | 物理扩展 | PHYSICS_EXTENSION_GUIDE.md | 三维扩展流程、代码模板 |
 | 能力全景 | CAPABILITIES.md | 本文档 — 全功能速览 |

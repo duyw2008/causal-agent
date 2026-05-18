@@ -1,8 +1,8 @@
 # Causal Agent — 系统架构文档
 
-> 最后更新: 2026-05-14
-> 状态: v0.9.6 — Phase 4 完成 + LLM 集成 (DeepSeek) + 自主诊断与自动方法选择
-> 测试: 52/52 passing
+> 最后更新: 2026-05-18
+> 状态: v0.9.7 — Phase 4 完成 + 文档同步与质量审计 | Phase 5 待开始
+> 测试: 52/52 passing | Demo: 8/8 passing
 
 ---
 
@@ -66,21 +66,24 @@ causal_agent/
 ├── nlp/
 │   └── parser.py               [✅] NL → CausalDAG (规则 + 模板)
 │
-├── datasets/                   [✅] 五类因果推理训练数据
+├── datasets/                   [✅] 五类因果推理训练数据 (1079 文件)
 │   ├── README.md               # 数据集文档 (schema, 使用说明)
-│   ├── type1_structure_learning/  # 100 个随机 DAG × 500 样本
-│   ├── type2_effect_estimation/   # 300 个 ATE 估计问题 × 1000 样本
-│   ├── type3_interventional/      # 150 个干预推理问题
-│   ├── type4_counterfactual/      # 96 个反事实三元组
-│   └── type5_domain_transfer/     # 8 领域跨域迁移数据
+│   ├── type1_structure_learning/  # 100 CSV + 101 JSON — 随机 DAG 结构学习
+│   ├── type2_effect_estimation/   # 300 CSV + 301 JSON — ATE 估计问题
+│   ├── type3_interventional/      # 125 CSV + 126 JSON — 干预推理问题
+│   ├── type4_counterfactual/      # 1 JSON — 反事实索引
+│   └── type5_domain_transfer/     # 16 CSV + 9 JSON — 8 领域跨域迁移
 │
 ├── training_data.py            [✅] 五类训练数据生成器
 ├── generate_all_datasets.py    [✅] 批量生成 + 存储脚本
 │
 ├── demos/                      [✅] 功能演示与原型验证
-│   ├── run_all.py              # 5 个核心 demo（全流程验证）
+│   ├── run_all.py              # 8 个核心 demo（全流程验证）
+│   ├── tutorial.py             # 交互式教程 (Simpson's Paradox, 7 步)
 │   ├── llm_prototype.py        # LLM 集成原型（Phase 4 预览）
-│   └── physics_causal_demo.py # 物理规律 + 因果推断集成原型
+│   ├── physics_causal_demo.py  # 物理规律 + 因果推断集成原型
+│   ├── aircraft_disappearance.py # 时间序列事件预测
+│   └── least_action_demo.py    # 最小作用量原理验证
 │
 ├── ARCHITECTURE.md             [✅] 系统架构
 ├── LEARNING.md                  [✅] 学习文档 — 从零理解全部算法与运行原理

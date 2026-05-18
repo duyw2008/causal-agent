@@ -338,7 +338,7 @@ def pcmci_lite(
     Steps:
       1. PC₁: Run PC on time-unfolded graph to get preliminary parents
       2. MCI: For each pair (X_{t-τ}, Y_t), test:
-           X_{t-τ} ⊥ Y_t | Parents(Y_t) \ {X_{t-τ}} ∪ Parents(X_{t-τ})
+           X_{t-τ} ⊥ Y_t | Parents(Y_t) \\ {X_{t-τ}} ∪ Parents(X_{t-τ})
 
     This removes false positives that arise from auto-correlation.
 
